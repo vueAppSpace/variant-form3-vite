@@ -1,91 +1,91 @@
 <template>
   <el-scrollbar class="side-scroll-bar" :style="{height: scrollerHeight}">
     <div class="panel-container">
+      <el-tabs v-model="firstTab" class="no-bottom-margin indent-left-margin">
+        <!-- 组件库 -->
+        <el-tab-pane name="componentLib">
+          <template #label>
+            <span><svg-icon icon-class="el-set-up" /> {{i18nt('designer.componentLib')}}</span>
+          </template>
 
-    <el-tabs v-model="firstTab" class="no-bottom-margin indent-left-margin">
-      <el-tab-pane name="componentLib">
-        <template #label>
-          <span><svg-icon icon-class="el-set-up" /> {{i18nt('designer.componentLib')}}</span>
-        </template>
+          <el-collapse v-model="activeNames" class="widget-collapse">
+            <!-- 容器组件 -->
+            <el-collapse-item name="1" :title="i18nt('designer.containerTitle')">
+              <draggable tag="ul" :list="containers" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
+                        :clone="handleContainerWidgetClone" ghost-class="ghost" :sort="false"
+                        :move="checkContainerMove" @end="onContainerDragEnd">
+                <template #item="{ element: ctn }">
+                  <li class="container-widget-item" :title="ctn.displayName" @dblclick="addContainerByDbClick(ctn)">
+                    <span><svg-icon :icon-class="ctn.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${ctn.type}`, `extension.widgetLabel.${ctn.type}`)}}</span>
+                  </li>
+                </template>
+              </draggable>
+            </el-collapse-item>
 
-      <el-collapse v-model="activeNames" class="widget-collapse">
-        <el-collapse-item name="1" :title="i18nt('designer.containerTitle')">
-          <draggable tag="ul" :list="containers" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
-                     :clone="handleContainerWidgetClone" ghost-class="ghost" :sort="false"
-                     :move="checkContainerMove" @end="onContainerDragEnd">
-            <template #item="{ element: ctn }">
-              <li class="container-widget-item" :title="ctn.displayName" @dblclick="addContainerByDbClick(ctn)">
-                <span><svg-icon :icon-class="ctn.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${ctn.type}`, `extension.widgetLabel.${ctn.type}`)}}</span>
-              </li>
-            </template>
-          </draggable>
-        </el-collapse-item>
+            <!-- 基础字段 -->
+            <el-collapse-item name="2" :title="i18nt('designer.basicFieldTitle')">
+              <draggable tag="ul" :list="basicFields" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
+                        :move="checkFieldMove"
+                        :clone="handleFieldWidgetClone" ghost-class="ghost" :sort="false">
+                <template #item="{ element: fld }">
+                  <li class="field-widget-item" :title="fld.displayName" @dblclick="addFieldByDbClick(fld)">
+                    <span><svg-icon :icon-class="fld.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${fld.type}`, `extension.widgetLabel.${fld.type}`)}}</span>
+                  </li>
+                </template>
+              </draggable>
+            </el-collapse-item>
 
-        <el-collapse-item name="2" :title="i18nt('designer.basicFieldTitle')">
-          <draggable tag="ul" :list="basicFields" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
-                     :move="checkFieldMove"
-                     :clone="handleFieldWidgetClone" ghost-class="ghost" :sort="false">
-            <template #item="{ element: fld }">
-              <li class="field-widget-item" :title="fld.displayName" @dblclick="addFieldByDbClick(fld)">
-                <span><svg-icon :icon-class="fld.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${fld.type}`, `extension.widgetLabel.${fld.type}`)}}</span>
-              </li>
-            </template>
-          </draggable>
-        </el-collapse-item>
+            <!-- 高级字段 -->
+            <el-collapse-item name="3" :title="i18nt('designer.advancedFieldTitle')">
+              <draggable tag="ul" :list="advancedFields" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
+                        :move="checkFieldMove"
+                        :clone="handleFieldWidgetClone" ghost-class="ghost" :sort="false">
+                <template #item="{ element: fld }">
+                  <li class="field-widget-item" :title="fld.displayName" @dblclick="addFieldByDbClick(fld)">
+                    <span><svg-icon :icon-class="fld.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${fld.type}`, `extension.widgetLabel.${fld.type}`)}}</span>
+                  </li>
+                </template>
+              </draggable>
+            </el-collapse-item>
 
-        <el-collapse-item name="3" :title="i18nt('designer.advancedFieldTitle')">
-          <draggable tag="ul" :list="advancedFields" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
-                     :move="checkFieldMove"
-                     :clone="handleFieldWidgetClone" ghost-class="ghost" :sort="false">
-            <template #item="{ element: fld }">
-              <li class="field-widget-item" :title="fld.displayName" @dblclick="addFieldByDbClick(fld)">
-                <span><svg-icon :icon-class="fld.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${fld.type}`, `extension.widgetLabel.${fld.type}`)}}</span>
-              </li>
-            </template>
-          </draggable>
-        </el-collapse-item>
+            <!-- 自定义扩展字段 -->
+            <el-collapse-item name="4" :title="i18nt('designer.customFieldTitle')">
+              <draggable tag="ul" :list="customFields" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
+                        :move="checkFieldMove"
+                        :clone="handleFieldWidgetClone" ghost-class="ghost" :sort="false">
+                <template #item="{ element: fld }">
+                  <li class="field-widget-item" :title="fld.displayName" @dblclick="addFieldByDbClick(fld)">
+                    <span>
+                      <svg-icon :icon-class="fld.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${fld.type}`, `extension.widgetLabel.${fld.type}`)}}</span>
+                  </li>
+                </template>
+              </draggable>
+            </el-collapse-item>
+          </el-collapse>
+        </el-tab-pane>
 
-        <el-collapse-item name="4" :title="i18nt('designer.customFieldTitle')">
-          <draggable tag="ul" :list="customFields" item-key="key" :group="{name: 'dragGroup', pull: 'clone', put: false}"
-                     :move="checkFieldMove"
-                     :clone="handleFieldWidgetClone" ghost-class="ghost" :sort="false">
-            <template #item="{ element: fld }">
-              <li class="field-widget-item" :title="fld.displayName" @dblclick="addFieldByDbClick(fld)">
-                <span>
-                  <svg-icon :icon-class="fld.icon" class-name="color-svg-icon" />{{i18n2t(`designer.widgetLabel.${fld.type}`, `extension.widgetLabel.${fld.type}`)}}</span>
-              </li>
-            </template>
-          </draggable>
-        </el-collapse-item>
-
-      </el-collapse>
-
-      </el-tab-pane>
-
-      <el-tab-pane v-if="showFormTemplates()" name="formLib" style="padding: 8px">
-        <template #label>
-          <span><svg-icon icon-class="el-form-template" /> {{i18nt('designer.formLib')}}</span>
-        </template>
-
-        <template v-for="(ft, idx) in formTemplates">
-          <el-card :bord-style="{ padding: '0' }" shadow="hover" class="ft-card">
-            <el-popover placement="right" trigger="hover">
-              <template #reference>
-                <img :src="ft.imgUrl" style="width: 200px">
-              </template>
-              <img :src="ft.imgUrl" style="height: 600px;width: 720px">
-            </el-popover>
-            <div class="bottom clear-fix">
-              <span class="ft-title">#{{idx+1}} {{ft.title}}</span>
-              <el-button link type="primary" class="right-button" @click="loadFormTemplate(ft.jsonUrl)">
-                {{i18nt('designer.hint.loadFormTemplate')}}</el-button>
-            </div>
-          </el-card>
-        </template>
-      </el-tab-pane>
-
-    </el-tabs>
-
+        <!-- 表单模板 -->
+        <el-tab-pane v-if="showFormTemplates()" name="formLib" style="padding: 8px">
+          <template #label>
+            <span><svg-icon icon-class="el-form-template" /> {{i18nt('designer.formLib')}}</span>
+          </template>
+          <template v-for="(ft, idx) in formTemplates">
+            <el-card :bord-style="{ padding: '0' }" shadow="hover" class="ft-card">
+              <el-popover placement="right" trigger="hover">
+                <template #reference>
+                  <img :src="ft.imgUrl" style="width: 200px">
+                </template>
+                <img :src="ft.imgUrl" style="height: 600px;width: 720px">
+              </el-popover>
+              <div class="bottom clear-fix">
+                <span class="ft-title">#{{idx+1}} {{ft.title}}</span>
+                <el-button link type="primary" class="right-button" @click="loadFormTemplate(ft.jsonUrl)">
+                  {{i18nt('designer.hint.loadFormTemplate')}}</el-button>
+              </div>
+            </el-card>
+          </template>
+        </el-tab-pane>
+      </el-tabs>
     </div>
   </el-scrollbar>
 </template>
@@ -176,6 +176,7 @@
       },
 
       loadWidgets() {
+        //容器组件
         this.containers = CONS.map(con => {
           return {
             key: generateId(),
@@ -186,6 +187,7 @@
           return !con.internal && !this.isBanned(con.type)
         })
 
+        //基础字段
         this.basicFields = BFS.map(fld => {
           return {
             key: generateId(),
@@ -195,7 +197,8 @@
         }).filter(fld => {
           return !this.isBanned(fld.type)
         })
-
+        
+        //高级字段
         this.advancedFields = AFS.map(fld => {
           return {
             key: generateId(),
@@ -205,7 +208,8 @@
         }).filter(fld => {
           return !this.isBanned(fld.type)
         })
-
+        
+        //自定义字段
         this.customFields = CFS.map(fld => {
           return {
             key: generateId(),
