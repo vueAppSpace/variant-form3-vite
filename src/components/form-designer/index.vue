@@ -9,6 +9,7 @@
 -->
 
 <template>
+  <!-- 表单编辑器 -->
   <el-container class="main-container full-height">
     <el-header class="main-header">
       <div class="float-left main-title">
@@ -33,11 +34,14 @@
     </el-header>
 
     <el-container>
+      <!-- 组件库 -->
       <el-aside class="side-panel">
         <widget-panel :designer="designer" />
       </el-aside>
 
+      <!-- 编辑区 -->
       <el-container class="center-layout-container">
+        <!-- 编辑区工具栏 -->
         <el-header class="toolbar-header">
           <toolbar-panel :designer="designer" :global-dsv="globalDsv" ref="toolbarRef">
             <template v-for="(idx, slotName) in $slots" #[slotName]>
@@ -45,6 +49,7 @@
             </template>
           </toolbar-panel>
         </el-header>
+        <!-- 编辑区 -->
         <el-main class="form-widget-main">
           <el-scrollbar class="container-scroll-bar" :style="{height: scrollerHeight}">
             <v-form-widget :designer="designer" :form-config="designer.formConfig" :global-dsv="globalDsv" ref="formRef">
@@ -53,6 +58,7 @@
         </el-main>
       </el-container>
 
+      <!-- 属性设置区(用于设置当前选中的widget) -->
       <el-aside>
         <setting-panel :designer="designer" :selected-widget="designer.selectedWidget"
                        :form-config="designer.formConfig" :global-dsv="globalDsv" @edit-event-handler="testEEH" />
@@ -63,10 +69,10 @@
 </template>
 
 <script>
-  import WidgetPanel from './widget-panel/index'
-  import ToolbarPanel from './toolbar-panel/index'
-  import SettingPanel from './setting-panel/index'
-  import VFormWidget from './form-widget/index'
+  import WidgetPanel from './widget-panel/index.vue'
+  import ToolbarPanel from './toolbar-panel/index.vue'
+  import SettingPanel from './setting-panel/index.vue'
+  import VFormWidget from './form-widget/index.vue'
   import {createDesigner} from "@/components/form-designer/designer"
   import {addWindowResizeHandler, deepClone, getQueryParam, getAllContainerWidgets,
     getAllFieldWidgets, traverseAllWidgets} from "@/utils/util"

@@ -4,6 +4,7 @@
     <el-form class="full-height-width widget-form" :label-position="labelPosition"
              :class="[customClass, layoutType + '-layout']" :size="size" :validate-on-rule-change="false">
 
+      <!-- 编辑区没有内容时提示信息 -->
       <template v-if="designer.widgetList.length === 0">
         <div class="no-widget-hint">{{i18nt('designer.noWidgetHint')}}</div>
       </template>
@@ -14,6 +15,7 @@
                    handle=".drag-handler" @end="onDragEnd" @add="onDragAdd" @update="onDragUpdate" :move="checkMove">
           <template #item="{ element: widget, index }">
             <div class="transition-group-el">
+              <!-- 这里需要区分是不是容器组件 -->
               <template v-if="'container' === widget.category">
                 <component :is="getWidgetName(widget)" :widget="widget" :designer="designer" :key="widget.id" :parent-list="designer.widgetList"
                                   :index-of-parent-list="index" :parent-widget="null"></component>

@@ -9,6 +9,7 @@
 -->
 
 <template>
+  <!-- 表单渲染器 -->
   <el-form :label-position="labelPosition" :size="size" :class="[customClass]" class="render-form"
            :label-width="labelWidth" :validate-on-rule-change="false"
            :model="formDataModel" ref="renderForm"
