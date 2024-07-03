@@ -475,7 +475,7 @@
           if (valid) {
             callback(this.formDataModel)
           } else {
-            callback(this.formDataModel, this.i18nt('render.hint.validationFailed'))
+            callback(this.formDataModel, '表单数据校验失败')
           }
         })
 

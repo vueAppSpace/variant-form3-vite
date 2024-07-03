@@ -165,7 +165,7 @@ export default {
         //TODO: 逐行校验子表单！！
         return this.formModel[this.widget.options.name]
       } else {
-        this.$message.error(this.i18nt('render.hint.nonSubFormType'))
+        this.$message.error('组件类型不是子表单')
       }
     },
 

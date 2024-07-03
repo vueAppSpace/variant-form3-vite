@@ -251,7 +251,7 @@
         } else {
           this.curLocale = this.curLocale || 'zh-CN'
         }
-        this.curLangName = this.i18nt('application.' + this.curLocale)
+        this.curLangName = '简体中文'
         this.changeLanguage(this.curLocale)
       },
 
@@ -279,7 +279,7 @@
 
       handleLanguageChanged(command) {
         this.changeLanguage(command)
-        this.curLangName = this.i18nt('application.' + command)
+        this.curLangName = '简体中文'
       },
 
       changeLanguage(langName) {

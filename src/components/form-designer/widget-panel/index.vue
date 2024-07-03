@@ -251,9 +251,9 @@
       },
 
       loadFormTemplate(jsonUrl) {
-        this.$confirm('是否加载这个模板？加载后会覆盖设计器当前表单，你可以使用“撤销”功能恢复。', this.i18nt('render.hint.prompt'), {
-          confirmButtonText: this.i18nt('render.hint.confirm'),
-          cancelButtonText: this.i18nt('render.hint.cancel')
+        this.$confirm('是否加载这个模板？加载后会覆盖设计器当前表单，你可以使用“撤销”功能恢复。', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消'
         }).then(() => {
           axios.get(jsonUrl).then(res => {
             let modifiedFlag = false

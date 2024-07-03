@@ -453,10 +453,10 @@
       },
 
       saveAsFile(fileContent, defaultFileName) {
-        this.$prompt(this.i18nt('designer.hint.fileNameForSave'), this.i18nt('designer.hint.saveFileTitle'), {
+        this.$prompt('文件名：', '保存为文件', {
           inputValue: defaultFileName,
           closeOnClickModal: false,
-          inputPlaceholder: this.i18nt('designer.hint.fileNameInputPlaceholder')
+          inputPlaceholder: '请输入文件名'
         }).then(({ value }) => {
           if (!value) {
             value = defaultFileName
@@ -506,7 +506,7 @@
           this.designer.loadFormJson(importObj)
 
           this.showImportJsonDialogFlag = false
-          this.$message.success(this.i18nt('designer.hint.importJsonSuccess'))
+          this.$message.success('导入JSON成功')
 
           this.designer.emitHistoryChange()
 
@@ -577,16 +577,16 @@
       copyV2SFC(e) {
         copyToClipboard(this.sfcCode, e,
             this.$message,
-            this.i18nt('designer.hint.copySFCSuccess'),
-            this.i18nt('designer.hint.copySFCFail')
+            '复制SFC代码成功',
+            '复制SFC代码失败'
         )
       },
 
       copyV3SFC(e) {
         copyToClipboard(this.sfcCodeV3, e,
             this.$message,
-            this.i18nt('designer.hint.copySFCSuccess'),
-            this.i18nt('designer.hint.copySFCFail')
+           '复制SFC代码成功',
+           '复制SFC代码失败'
         )
       },
 

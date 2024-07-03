@@ -260,9 +260,9 @@
       },
 
       deleteSubFormRow(formRowIndex) {
-        this.$confirm(this.i18nt('render.hint.deleteSubFormRow') + '?', this.i18nt('render.hint.prompt'), {
-          confirmButtonText: this.i18nt('render.hint.confirm'),
-          cancelButtonText: this.i18nt('render.hint.cancel')
+        this.$confirm('删除行' + '?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消'
         }).then(() => {
           let oldSubFormData = this.formModel[this.widget.options.name] || []
           let deletedDataRow = deepClone(oldSubFormData[formRowIndex])

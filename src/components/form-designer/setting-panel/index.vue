@@ -294,7 +294,7 @@
           })
 
           if (syntaxErrorFlag) {
-            this.$message.error(this.i18nt('designer.setting.syntaxCheckWarning'))
+            this.$message.error(`JS代码存在语法错误，请仔细检查！`)
             return
           }
         }
