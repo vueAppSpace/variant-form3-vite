@@ -489,7 +489,6 @@ ${formConfig.cssCode}`
 }
 
 const genScopedCSS = function (formConfig, vue3Flag = false) {
-  //const vDeep = !!vue3Flag ? `::v-deep` : `:deep`
   const cssTemplate =
 `  div.table-container {
     table.table-layout {
@@ -508,15 +507,15 @@ const genScopedCSS = function (formConfig, vue3Flag = false) {
   div.tab-container {
   }
   
-  .label-left-align ${!!vue3Flag ? `:deep(.el-form-item__label)` : `::v-deep .el-form-item__label`} {
+  .label-left-align ${!!vue3Flag ? `:deep(.el-form-item__label)` : `:deep(.el-form-item__label)`} {
     text-align: left;
   }
 
-  .label-center-align ${!!vue3Flag ? `:deep(.el-form-item__label)` : `::v-deep .el-form-item__label`} {
+  .label-center-align ${!!vue3Flag ? `:deep(.el-form-item__label)` : `:deep(.el-form-item__label)`} {
     text-align: center;
   }
 
-  .label-right-align ${!!vue3Flag ? `:deep(.el-form-item__label)` : `::v-deep .el-form-item__label`} {
+  .label-right-align ${!!vue3Flag ? `:deep(.el-form-item__label)` : `:deep(.el-form-item__label)`} {
     text-align: right;
   }
   
@@ -528,7 +527,7 @@ const genScopedCSS = function (formConfig, vue3Flag = false) {
     display: flex;
     align-items: center;
 
-    ${!!vue3Flag ? `:deep(.el-divider--horizontal)` : `::v-deep .el-divider--horizontal`} {
+    ${!!vue3Flag ? `:deep(.el-divider--horizontal)` : `:deep(.el-divider--horizontal)`} {
       margin: 0;
     }
   }`
