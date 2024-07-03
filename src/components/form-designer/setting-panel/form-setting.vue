@@ -90,9 +90,9 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button @click="showFormEventDialogFlag = false">
-              {{i18nt('designer.hint.cancel')}}</el-button>
+              取消</el-button>
             <el-button type="primary" @click="saveFormEventHandler">
-              {{i18nt('designer.hint.confirm')}}</el-button>
+              确定</el-button>
           </div>
         </template>
       </el-dialog>
@@ -106,9 +106,9 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button @click="showEditFormCssDialogFlag = false">
-              {{i18nt('designer.hint.cancel')}}</el-button>
+              取消</el-button>
             <el-button type="primary" @click="saveFormCss">
-              {{i18nt('designer.hint.confirm')}}</el-button>
+              确定</el-button>
           </div>
         </template>
       </el-dialog>
@@ -122,9 +122,9 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button @click="showEditFunctionsDialogFlag = false">
-              {{i18nt('designer.hint.cancel')}}</el-button>
+              取消</el-button>
             <el-button type="primary" @click="saveGlobalFunctions">
-              {{i18nt('designer.hint.confirm')}}</el-button>
+              确定</el-button>
           </div>
         </template>
       </el-dialog>

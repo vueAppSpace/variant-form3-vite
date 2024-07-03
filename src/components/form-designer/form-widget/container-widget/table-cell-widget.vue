@@ -23,10 +23,10 @@
     </draggable>
 
     <div class="table-cell-action" v-if="designer.selectedId === widget.id && widget.type === 'table-cell'">
-      <i :title="i18nt('designer.hint.selectParentWidget')"
+      <i :title="'选中父组件'"
          @click.stop="selectParentWidget()"><svg-icon icon-class="el-back" /></i>
       <el-dropdown trigger="click" @command="handleTableCellCommand" size="small">
-        <i :title="i18nt('designer.hint.cellSetting')"><svg-icon icon-class="el-menu" /></i>
+        <i :title="'单元格操作'"><svg-icon icon-class="el-menu" /></i>
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item command="insertLeftCol">{{i18nt('designer.setting.insertColumnToLeft')}}</el-dropdown-item>

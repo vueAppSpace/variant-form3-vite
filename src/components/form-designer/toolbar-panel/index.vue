@@ -60,11 +60,11 @@
         </div>
         <template #footer>
           <div class="dialog-footer">
-            <el-button type="primary" @click="getFormData">{{i18nt('designer.hint.getFormData')}}</el-button>
-            <el-button type="primary" @click="resetForm">{{i18nt('designer.hint.resetForm')}}</el-button>
-            <el-button type="primary" @click="setFormDisabled">{{i18nt('designer.hint.disableForm')}}</el-button>
-            <el-button type="primary" @click="setFormEnabled">{{i18nt('designer.hint.enableForm')}}</el-button>
-            <el-button @click="showPreviewDialogFlag = false">{{i18nt('designer.hint.closePreview')}}</el-button>
+            <el-button type="primary" @click="getFormData">获取数据</el-button>
+            <el-button type="primary" @click="resetForm">重置表单</el-button>
+            <el-button type="primary" @click="setFormDisabled">禁用编辑</el-button>
+            <el-button type="primary" @click="setFormEnabled">恢复编辑</el-button>
+            <el-button @click="showPreviewDialogFlag = false">关闭</el-button>
             <el-button v-if="false" @click="testLoadForm">Test Load</el-button>
             <el-button v-if="false" @click="testSetFormJson">Test SFJ</el-button>
             <el-button v-if="false" @click="testSetFormData">Test SFD</el-button>
@@ -83,9 +83,9 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button type="primary" @click="doJsonImport">
-              {{i18nt('designer.hint.import')}}</el-button>
+              导入</el-button>
             <el-button @click="showImportJsonDialogFlag = false">
-              {{i18nt('designer.hint.cancel')}}</el-button>
+              取消</el-button>
           </div>
         </template>
       </el-dialog>
@@ -99,10 +99,10 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button type="primary" class="copy-json-btn" :data-clipboard-text="jsonRawContent" @click="copyFormJson">
-              {{i18nt('designer.hint.copyJson')}}</el-button>
-            <el-button @click="saveFormJson">{{i18nt('designer.hint.saveFormJson')}}</el-button>
+              复制JSON</el-button>
+            <el-button @click="saveFormJson">保存为文件</el-button>
             <el-button @click="showExportJsonDialogFlag = false">
-              {{i18nt('designer.hint.closePreview')}}</el-button>
+              关闭</el-button>
           </div>
         </template>
       </el-dialog>
@@ -123,13 +123,13 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button type="primary" class="copy-vue-btn" :data-clipboard-text="vueCode" @click="copyVueCode">
-              {{i18nt('designer.hint.copyVueCode')}}</el-button>
+              复制Vue代码</el-button>
             <el-button type="primary" class="copy-html-btn" :data-clipboard-text="htmlCode" @click="copyHtmlCode">
-              {{i18nt('designer.hint.copyHtmlCode')}}</el-button>
-            <el-button @click="saveVueCode">{{i18nt('designer.hint.saveVueCode')}}</el-button>
-            <el-button @click="saveHtmlCode">{{i18nt('designer.hint.saveHtmlCode')}}</el-button>
+              复制HTML代码</el-button>
+            <el-button @click="saveVueCode">保存Vue文件</el-button>
+            <el-button @click="saveHtmlCode">保存Html文件</el-button>
             <el-button @click="showExportCodeDialogFlag = false">
-              {{i18nt('designer.hint.closePreview')}}</el-button>
+              关闭</el-button>
           </div>
         </template>
       </el-dialog>
@@ -146,10 +146,10 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button type="primary" class="copy-form-data-json-btn" :data-clipboard-text="formDataRawJson" @click="copyFormDataJson">
-              {{i18nt('designer.hint.copyFormData')}}</el-button>
-            <el-button @click="saveFormData">{{i18nt('designer.hint.saveFormData')}}</el-button>
+              复制JSON</el-button>
+            <el-button @click="saveFormData">保存为文件</el-button>
             <el-button @click="showFormDataDialogFlag = false">
-              {{i18nt('designer.hint.closePreview')}}</el-button>
+              关闭</el-button>
           </div>
         </template>
       </el-dialog>
@@ -170,13 +170,13 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button type="primary" class="copy-vue2-sfc-btn" :data-clipboard-text="sfcCode" @click="copyV2SFC">
-              {{i18nt('designer.hint.copyVue2SFC')}}</el-button>
+              复制Vue2代码</el-button>
             <el-button type="primary" class="copy-vue3-sfc-btn" :data-clipboard-text="sfcCodeV3" @click="copyV3SFC">
-              {{i18nt('designer.hint.copyVue3SFC')}}</el-button>
-            <el-button @click="saveV2SFC">{{i18nt('designer.hint.saveVue2SFC')}}</el-button>
-            <el-button @click="saveV3SFC">{{i18nt('designer.hint.saveVue3SFC')}}</el-button>
+              复制Vue3代码</el-button>
+            <el-button @click="saveV2SFC">保存为Vue2组件</el-button>
+            <el-button @click="saveV3SFC">保存为Vue3组件</el-button>
             <el-button @click="showExportSFCDialogFlag = false">
-              {{i18nt('designer.hint.closePreview')}}</el-button>
+              关闭</el-button>
           </div>
         </template>
       </el-dialog>

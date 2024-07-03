@@ -60,8 +60,8 @@
         </el-form-item>
         <template #footer>
           <div class="dialog-footer">
-            <el-button size="large" type="primary" @click="saveOptions">{{i18nt('designer.hint.confirm')}}</el-button>
-            <el-button size="large" @click="showImportDialogFlag = false">{{i18nt('designer.hint.cancel')}}</el-button>
+            <el-button size="large" type="primary" @click="saveOptions">确定</el-button>
+            <el-button size="large" @click="showImportDialogFlag = false">取消</el-button>
           </div>
         </template>
       </el-dialog>
@@ -74,8 +74,8 @@
         <code-editor v-model="cascaderOptions" mode="json" :readonly="false"></code-editor>
         <template #footer>
           <div class="dialog-footer">
-            <el-button size="large" type="primary" @click="saveCascaderOptions">{{i18nt('designer.hint.confirm')}}</el-button>
-            <el-button size="large" @click="showImportCascaderDialogFlag = false">{{i18nt('designer.hint.cancel')}}</el-button>
+            <el-button size="large" type="primary" @click="saveCascaderOptions">确定</el-button>
+            <el-button size="large" @click="showImportCascaderDialogFlag = false">取消</el-button>
           </div>
         </template>
       </el-dialog>

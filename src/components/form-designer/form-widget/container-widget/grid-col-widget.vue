@@ -22,16 +22,16 @@
     </draggable>
 
     <div class="grid-col-action" v-if="designer.selectedId === widget.id && widget.type === 'grid-col'">
-      <i :title="i18nt('designer.hint.selectParentWidget')"
+      <i :title="'选中父组件'"
          @click.stop="selectParentWidget(widget)"><svg-icon icon-class="el-back" /></i>
-      <i v-if="!!parentList && (parentList.length > 1)" :title="i18nt('designer.hint.moveUpWidget')"
+      <i v-if="!!parentList && (parentList.length > 1)" :title="'上移组件'"
          @click.stop="moveUpWidget()"><svg-icon icon-class="el-move-up" /></i>
-      <i v-if="!!parentList && (parentList.length > 1)" :title="i18nt('designer.hint.moveDownWidget')"
+      <i v-if="!!parentList && (parentList.length > 1)" :title="'下移组件'"
          @click.stop="moveDownWidget()"><svg-icon icon-class="el-move-down" /></i>
-      <i :title="i18nt('designer.hint.cloneWidget')" @click.stop="cloneGridCol(widget)">
+      <i :title="'复制组件'" @click.stop="cloneGridCol(widget)">
         <svg-icon icon-class="el-clone" />
       </i>
-      <i :title="i18nt('designer.hint.remove')" @click.stop="removeWidget">
+      <i :title="移除组件" @click.stop="removeWidget">
         <svg-icon icon-class="el-delete" />
       </i>
     </div>

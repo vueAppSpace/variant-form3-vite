@@ -80,7 +80,7 @@
               <div class="bottom clear-fix">
                 <span class="ft-title">#{{idx+1}} {{ft.title}}</span>
                 <el-button link type="primary" class="right-button" @click="loadFormTemplate(ft.jsonUrl)">
-                  {{i18nt('designer.hint.loadFormTemplate')}}</el-button>
+                  加载此模板</el-button>
               </div>
             </el-card>
           </template>

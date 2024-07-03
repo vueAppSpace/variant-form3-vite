@@ -83,9 +83,9 @@
         <template #footer>
           <div class="dialog-footer">
             <el-button @click="showWidgetEventDialogFlag = false">
-              {{i18nt('designer.hint.cancel')}}</el-button>
+              取消</el-button>
             <el-button type="primary" @click="saveEventHandler">
-              {{i18nt('designer.hint.confirm')}}</el-button>
+              确定</el-button>
           </div>
         </template>
       </el-dialog>
