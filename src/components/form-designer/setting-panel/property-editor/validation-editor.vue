@@ -34,14 +34,14 @@
     data() {
       return {
         fieldValidators: [
-          {value: 'number', label: this.i18nt('designer.hint.numberValidator')},
-          {value: 'letter', label: this.i18nt('designer.hint.letterValidator')},
-          {value: 'letterAndNumber', label: this.i18nt('designer.hint.letterAndNumberValidator')},
-          {value: 'mobilePhone', label: this.i18nt('designer.hint.mobilePhoneValidator')},
-          {value: 'email', label: this.i18nt('designer.hint.emailValidator')},
-          {value: 'url', label: this.i18nt('designer.hint.urlValidator')},
-          {value: 'noChinese', label: this.i18nt('designer.hint.noChineseValidator')},
-          {value: 'chinese', label: this.i18nt('designer.hint.chineseValidator')},
+          {value: 'number', label: '数字'},
+          {value: 'letter', label: '字母'},
+          {value: 'letterAndNumber', label: '数字字母'},
+          {value: 'mobilePhone', label: '手机号码'},
+          {value: 'email', label: '邮箱'},
+          {value: 'url', label: '网址'},
+          {value: 'noChinese', label: '非中文字符'},
+          {value: 'chinese', label: '仅中文字符'},
         ],
       }
     },
