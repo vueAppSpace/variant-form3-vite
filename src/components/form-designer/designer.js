@@ -142,7 +142,7 @@ export function createDesigner(vueInstance) {
         let wgType = evt.draggedContext.element.type + ''
         if (!!evt.to) {
           if ((evt.to.className === 'sub-form-table') && (wgCategory === 'container')) {
-            //this.$message.info(this.vueInstance.i18nt('designer.hint.onlyFieldWidgetAcceptable'))
+            //this.$message.info('子表单只能接收字段组件')
             return false
           }
         }
@@ -157,7 +157,7 @@ export function createDesigner(vueInstance) {
         let wgType = evt.draggedContext.element.type + ''
         if (!!evt.to) {
           if ((evt.to.className === 'sub-form-table') && (wgType === 'slot')) {
-            //this.$message.info(this.vueInstance.i18nt('designer.hint.onlyFieldWidgetAcceptable'))
+            this.$message.info('子表单只能接收字段组件')
             return false
           }
         }
@@ -426,7 +426,7 @@ export function createDesigner(vueInstance) {
         }
       }
       if (unmatchedFlag) {
-        this.vueInstance.$message.info(this.vueInstance.i18nt('designer.hint.rowspanNotConsistentForMergeEntireRow'))
+        this.vueInstance.$message.info('存在行高不一致的单元格, 无法合并整行.')
         return
       }
 
@@ -485,7 +485,7 @@ export function createDesigner(vueInstance) {
         }
       }
       if (unmatchedFlag) {
-        this.vueInstance.$message.info(this.vueInstance.i18nt('designer.hint.colspanNotConsistentForMergeEntireColumn'))
+        this.vueInstance.$message.info('存在列宽不一致的单元格, 无法合并整列.')
         return
       }
 
@@ -531,7 +531,7 @@ export function createDesigner(vueInstance) {
       })
       //仅剩一列则不可删除！！
       if (onlyOneColFlag) {
-        this.vueInstance.$message.info(this.vueInstance.i18nt('designer.hint.lastColCannotBeDeleted'))
+        this.vueInstance.$message.info('最后一列不可删除.')
         return
       }
 
@@ -545,7 +545,7 @@ export function createDesigner(vueInstance) {
         }
       }
       if (unmatchedFlag) {
-        this.vueInstance.$message.info(this.vueInstance.i18nt('designer.hint.colspanNotConsistentForDeleteEntireColumn'))
+        this.vueInstance.$message.info('存在列宽不一致的单元格, 不可删除整列.')
         return
       }
 
@@ -565,7 +565,7 @@ export function createDesigner(vueInstance) {
       })
       //仅剩一行则不可删除！！
       if (onlyOneRowFlag) {
-        this.vueInstance.$message.info(this.vueInstance.i18nt('designer.hint.lastRowCannotBeDeleted'))
+        this.vueInstance.$message.info('最后一行不可删除.')
         return
       }
 
@@ -579,7 +579,7 @@ export function createDesigner(vueInstance) {
         }
       }
       if (unmatchedFlag) {
-        this.vueInstance.$message.info(this.vueInstance.i18nt('designer.hint.rowspanNotConsistentForDeleteEntireRow'))
+        this.vueInstance.$message.info('存在行高不一致的单元格, 不可删除整行.')
         return
       }
 
@@ -703,7 +703,7 @@ export function createDesigner(vueInstance) {
     moveUpWidget(parentList, indexOfParentList) {
       if (!!parentList) {
         if (indexOfParentList === 0) {
-          this.vueInstance.$message(this.vueInstance.i18nt('designer.hint.moveUpFirstChildHint'))
+          this.vueInstance.$message('已经移动到最上面')
           return
         }
 
@@ -716,7 +716,7 @@ export function createDesigner(vueInstance) {
     moveDownWidget(parentList, indexOfParentList) {
       if (!!parentList) {
         if (indexOfParentList === parentList.length - 1) {
-          this.vueInstance.$message(this.vueInstance.i18nt('designer.hint.moveDownLastChildHint'))
+          this.vueInstance.$message('已经移动到最下面')
           return
         }
 
