@@ -97,6 +97,7 @@
   import i18n from "@/utils/i18n"
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index";
+  import PageTextMap from '@/lang/zh-CN'
 
   // import ftImg1 from '@/assets/ft-images/t1.png'
   // import ftImg2 from '@/assets/ft-images/t2.png'
@@ -181,7 +182,7 @@
           return {
             key: generateId(),
             ...con,
-            displayName: this.i18nt(`designer.widgetLabel.${con.type}`)
+            displayName: PageTextMap.designer.widgetLabel[con.type]
           }
         }).filter(con => {
           return !con.internal && !this.isBanned(con.type)
@@ -192,7 +193,7 @@
           return {
             key: generateId(),
             ...fld,
-            displayName: this.i18nt(`designer.widgetLabel.${fld.type}`)
+            displayName: PageTextMap.designer.widgetLabel[fld.type]
           }
         }).filter(fld => {
           return !this.isBanned(fld.type)
@@ -203,7 +204,7 @@
           return {
             key: generateId(),
             ...fld,
-            displayName: this.i18nt(`designer.widgetLabel.${fld.type}`)
+            displayName: PageTextMap.designer.widgetLabel[fld.type]
           }
         }).filter(fld => {
           return !this.isBanned(fld.type)
@@ -214,7 +215,7 @@
           return {
             key: generateId(),
             ...fld,
-            displayName: this.i18nt(`designer.widgetLabel.${fld.type}`)
+            displayName: PageTextMap.designer.widgetLabel[fld.type]
           }
         }).filter(fld => {
           return !this.isBanned(fld.type)
