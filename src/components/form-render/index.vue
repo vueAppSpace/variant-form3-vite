@@ -396,7 +396,7 @@
       getWidgetRef(widgetName, showError = false) {
         let foundRef = this.widgetRefList[widgetName]
         if (!foundRef && !!showError) {
-          this.$message.error(this.i18nt('render.hint.refNotFound') + widgetName)
+          this.$message.error(`组件未找到: ` + widgetName)
         }
         return foundRef
       },

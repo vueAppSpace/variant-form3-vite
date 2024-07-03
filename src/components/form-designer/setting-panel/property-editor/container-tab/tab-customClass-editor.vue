@@ -75,7 +75,7 @@
 
       deleteTabPane(curTabs, tpIdx) {
         if (curTabs.tabs.length === 1) {
-          this.$message.info(this.i18nt('designer.hint.lastPaneCannotBeDeleted'))
+          this.$message.info('仅剩一个选项卡页不可删除.')
           return
         }
 

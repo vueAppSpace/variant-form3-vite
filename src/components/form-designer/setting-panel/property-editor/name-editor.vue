@@ -55,7 +55,7 @@
         let oldName = this.designer.selectedWidgetName
         if (isEmptyStr(newName)) {
           this.selectedWidget.options.name = oldName
-          this.$message.info(this.i18nt('designer.hint.nameRequired'))
+          this.$message.info('组件名称不可为空')
           return
         }
 
@@ -63,7 +63,7 @@
           let foundRef = this.designer.formWidget.getWidgetRef(newName) // 检查newName是否已存在！！
           if (!!foundRef) {
             this.selectedWidget.options.name = oldName
-            this.$message.info(this.i18nt('designer.hint.duplicateName') + newName)
+            this.$message.info('组件名称已存在: ' + newName)
             return
           }
 

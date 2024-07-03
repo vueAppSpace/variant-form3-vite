@@ -212,7 +212,7 @@
 
           this.showImportCascaderDialogFlag = false
         } catch (ex) {
-          this.$message.error(this.i18nt('designer.hint.invalidOptionsData') + ex.message)
+          this.$message.error('无效的选项数据:' + ex.message)
         }
       },
 

@@ -138,7 +138,7 @@
     methods: {
       handleFileExceed() {
         let uploadLimit = this.field.options.limit
-        this.$message.warning( this.i18nt('render.hint.uploadExceed').replace('${uploadLimit}', uploadLimit) )
+        this.$message.warning(`最大上传数量(${uploadLimit})已超出.`.replace('${uploadLimit}', uploadLimit) )
       },
 
       beforeFileUpload(file) {
@@ -153,7 +153,7 @@
           }
         }
         if (!fileTypeCheckResult) {
-          this.$message.error(this.i18nt('render.hint.unsupportedFileType') + extFileName)
+          this.$message.error(`不支持格式: ` + extFileName)
           return false;
         }
 
@@ -164,7 +164,7 @@
         }
         fileSizeCheckResult = file.size / 1024 / 1024 <= uploadFileMaxSize
         if (!fileSizeCheckResult) {
-          this.$message.error(this.i18nt('render.hint.fileSizeExceed') + uploadFileMaxSize + 'MB')
+          this.$message.error(`文件大小已超出: ` + uploadFileMaxSize + 'MB')
           return false;
         }
 
@@ -265,7 +265,7 @@
           customFn.call(this, err, file, fileList)
         } else {
           this.$message({
-            message: this.i18nt('render.hint.uploadError') + err,
+            message: `上传错误:` + err,
             duration: 3000,
             type: 'error',
           })

@@ -233,14 +233,14 @@
 
         axios.get(MOCK_CASE_URL + this.caseName + '.txt').then(res => {
           if (!!res.data.code) {
-            this.$message.error(this.i18nt('designer.hint.sampleLoadedFail'))
+            this.$message.error('表单示例加载失败')
             return
           }
 
           this.setFormJson(res.data)
-          this.$message.success(this.i18nt('designer.hint.sampleLoadedSuccess'))
+          this.$message.success('表单示例加载成功')
         }).catch(error => {
-          this.$message.error(this.i18nt('designer.hint.sampleLoadedFail') + ':' + error)
+          this.$message.error('表单示例加载失败' + ':' + error)
         })
       },
 

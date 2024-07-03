@@ -1,10 +1,5 @@
 export default {
   extension: {
-    widgetLabel: {
-      card: '卡片',
-      alert: '提示'
-    },
-
     setting: {
       cardFolded: '是否收起',
       cardShowFold: '显示折叠按钮',

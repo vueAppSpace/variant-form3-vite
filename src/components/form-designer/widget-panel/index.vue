@@ -251,7 +251,7 @@
       },
 
       loadFormTemplate(jsonUrl) {
-        this.$confirm(this.i18nt('designer.hint.loadFormTemplateHint'), this.i18nt('render.hint.prompt'), {
+        this.$confirm('是否加载这个模板？加载后会覆盖设计器当前表单，你可以使用“撤销”功能恢复。', this.i18nt('render.hint.prompt'), {
           confirmButtonText: this.i18nt('render.hint.confirm'),
           cancelButtonText: this.i18nt('render.hint.cancel')
         }).then(() => {
@@ -266,9 +266,9 @@
               this.designer.emitHistoryChange()
             }
 
-            this.$message.success(this.i18nt('designer.hint.loadFormTemplateSuccess'))
+            this.$message.success('表单模板加载成功')
           }).catch(error => {
-            this.$message.error(this.i18nt('designer.hint.loadFormTemplateFailed') + ':' + error)
+            this.$message.error('表单模板加载失败' + ':' + error)
           })
         }).catch(error => {
           console.error(error)

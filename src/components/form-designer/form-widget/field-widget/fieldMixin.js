@@ -208,7 +208,7 @@ export default {
           required: true,
           //trigger: ['blur', 'change'],
           trigger: ['blur'],  /* 去掉change事件触发校验，change事件触发时formModel数据尚未更新，导致radio/checkbox必填校验出错！！ */
-          message: this.field.options.requiredHint || this.i18nt('render.hint.fieldRequired'),
+          message: this.field.options.requiredHint || `字段值不可为空`,
         })
       }
 
@@ -423,7 +423,7 @@ export default {
     getWidgetRef(widgetName, showError) {
       let foundRef = this.refList[widgetName]
       if (!foundRef && !!showError) {
-        this.$message.error(this.i18nt('render.hint.refNotFound') + widgetName)
+        this.$message.error(`组件未找到: ` + widgetName)
       }
       return foundRef
     },

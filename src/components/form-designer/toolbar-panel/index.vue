@@ -495,12 +495,12 @@
           let importObj = JSON.parse(this.importTemplate)
           //console.log('test import', this.importTemplate)
           if (!importObj || !importObj.formConfig) {
-            throw new Error( this.i18nt('designer.hint.invalidJsonFormat') )
+            throw new Error( `无效的表单JSON格式` )
           }
 
           let fJsonVer = importObj.formConfig.jsonVersion
           if (!fJsonVer || (fJsonVer !== 3)) {
-            throw new Error( this.i18nt('designer.hint.jsonVersionMismatch') )
+            throw new Error( '表单JSON版本号不匹配' )
           }
 
           this.designer.loadFormJson(importObj)
@@ -527,8 +527,8 @@
       copyFormJson(e) {
         copyToClipboard(this.jsonRawContent, e,
             this.$message,
-            this.i18nt('designer.hint.copyJsonSuccess'),
-            this.i18nt('designer.hint.copyJsonFail')
+            '复制JSON成功',
+            '复制JSON失败'
         )
       },
 
@@ -545,16 +545,16 @@
       copyVueCode(e) {
         copyToClipboard(this.vueCode, e,
             this.$message,
-            this.i18nt('designer.hint.copyVueCodeSuccess'),
-            this.i18nt('designer.hint.copyVueCodeFail')
+            '复制Vue代码成功',
+            '复制Vue代码失败'
         )
       },
 
       copyHtmlCode(e) {
         copyToClipboard(this.htmlCode, e,
             this.$message,
-            this.i18nt('designer.hint.copyHtmlCodeSuccess'),
-            this.i18nt('designer.hint.copyHtmlCodeFail')
+            '复制HTML代码成功',
+            复制HTML代码失败
         )
       },
 
@@ -612,8 +612,8 @@
       copyFormDataJson(e) {
         copyToClipboard(this.formDataRawJson, e,
             this.$message,
-            this.i18nt('designer.hint.copyJsonSuccess'),
-            this.i18nt('designer.hint.copyJsonFail')
+            '复制JSON成功',
+            '复制JSON失败'
         )
       },
 
@@ -714,7 +714,7 @@
         //console.log('test', JSON.stringify(nodeData))
 
         if ((nodeData.selectable !== undefined) && !nodeData.selectable) {
-          this.$message.info(this.i18nt('designer.hint.currentNodeCannotBeSelected'))
+          this.$message.info('当前组件节点不可选择')
         } else {
           const selectedId = nodeData.id
           const foundW = this.findWidgetById(selectedId)

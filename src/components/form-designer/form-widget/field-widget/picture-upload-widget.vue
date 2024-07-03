@@ -158,7 +158,7 @@
     methods: {
       handlePictureExceed() {
         let uploadLimit = this.field.options.limit
-        this.$message.warning( this.i18nt('render.hint.uploadExceed').replace('${uploadLimit}', uploadLimit) )
+        this.$message.warning( `最大上传数量(${uploadLimit})已超出.`.replace('${uploadLimit}', uploadLimit) )
       },
 
       beforePictureUpload(file) {
@@ -172,7 +172,7 @@
           }
         }
         if (!fileTypeCheckResult) {
-          this.$message.error(this.i18nt('render.hint.unsupportedFileType') + file.type)
+          this.$message.error(`不支持格式: ` + file.type)
           return false;
         }
 
@@ -279,7 +279,7 @@
           customFn.call(this, err, file, fileList)
         } else {
           this.$message({
-            message: this.i18nt('render.hint.uploadError') + err,
+            message: `上传错误:`  + err,
             duration: 3000,
             type: 'error',
           })
