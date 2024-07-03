@@ -53,7 +53,7 @@
 
       <div class="drag-handler background-opacity" v-if="designer.selectedId === field.id">
         <i :title="i18nt('designer.hint.dragHandler')"><svg-icon icon-class="el-drag-move" /></i>
-        <i>{{i18n2t(`designer.widgetLabel.${field.type}`, `extension.widgetLabel.${field.type}`)}}</i>
+        <i>{{i18nt(`designer.widgetLabel.${field.type}`)}}</i>
         <i v-if="field.options.hidden === true"><svg-icon icon-class="el-hide" /></i>
       </div>
     </template>
@@ -295,9 +295,9 @@
       text-overflow: ellipsis;
     }
 
-    :deep(.el-form-item__content) {
-      //position: unset;  /* TODO: 忘了这个样式设置是为了解决什么问题？？ */
-    }
+    // :deep(.el-form-item__content) {
+    //   //position: unset;  /* TODO: 忘了这个样式设置是为了解决什么问题？？ */
+    // }
 
     span.custom-label i {
       margin: 0 3px;
@@ -310,9 +310,9 @@
     }
 
     /* 隐藏Firefox浏览器中el-input数字输入框右侧的上下调整小箭头 */
-    :deep(.hide-spin-button) input[type="number"] {
-      -moz-appearance: textfield;
-    }
+    // :deep(.hide-spin-button) input[type="number"] {
+    //   -moz-appearance: textfield;
+    // }
   }
 
   .required :deep(.el-form-item__label)::before {

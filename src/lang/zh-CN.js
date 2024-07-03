@@ -117,7 +117,10 @@ export default {
       cascader: '级联选择',
       slot: '插槽',
 
-      custom: 'Custom Component'
+      custom: 'Custom Component',
+
+      card: '卡片',
+      alert: '提示'
     },
 
     hint: {
