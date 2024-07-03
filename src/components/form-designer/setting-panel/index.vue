@@ -1,6 +1,7 @@
 <template>
   <el-container class="panel-container">
     <el-tabs v-model="activeTab" style="height: 100%; width:100%; overflow: hidden">
+      <!-- 组件设置 -->
       <el-tab-pane :label="i18nt('designer.hint.widgetSetting')" name="1">
         <el-scrollbar class="setting-scrollbar" :style="{height: scrollerHeight}">
 
@@ -64,13 +65,14 @@
         </el-scrollbar>
       </el-tab-pane>
 
+      <!-- 表单设置 -->
       <el-tab-pane v-if="!!designer" :label="i18nt('designer.hint.formSetting')" name="2">
         <el-scrollbar class="setting-scrollbar" :style="{height: scrollerHeight}">
           <form-setting :designer="designer" :form-config="formConfig"></form-setting>
         </el-scrollbar>
       </el-tab-pane>
     </el-tabs>
-
+    
     <div v-if="showWidgetEventDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
       <el-dialog :title="i18nt('designer.setting.editWidgetEventHandler')" v-model="showWidgetEventDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" append-to-body
@@ -185,8 +187,10 @@
 
     },
     created() {
+      //动态绑定监听编辑事件
       this.on$('editEventHandler', (eventParams) => {
         //debugger
+        console.log("editEventHandler>>>>>>");
         this.editEventHandler(eventParams[0], eventParams[1])
       })
 

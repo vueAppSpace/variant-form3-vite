@@ -11,11 +11,12 @@ import {containers, advancedFields, basicFields, customFields} from "@/component
 import {VARIANT_FORM_VERSION} from "@/utils/config"
 import eventBus from "@/utils/event-bus"
 
+//构建初始整个表单默认大json对象
 export function createDesigner(vueInstance) {
   let defaultFormConfig = deepClone( getDefaultFormConfig() )
 
   return {
-    widgetList: [],
+    widgetList: [],//存储该表单包含的所有的子组件(容器组件，基础组件，高级组件)
     formConfig: {cssCode: ''},
 
     selectedId: null,

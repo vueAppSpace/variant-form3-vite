@@ -348,6 +348,7 @@ export function getQueryParam(variable) {
   return undefined;
 }
 
+//获取默认表单配置
 export function getDefaultFormConfig() {
   return {
     modelName: 'formData',

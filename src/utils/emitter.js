@@ -13,6 +13,7 @@ function _broadcast(componentName, eventName, params) {
   });
 }
 
+//自定义了一个事件系统
 export default {
   data() {
     return {
@@ -21,6 +22,7 @@ export default {
   },
 
   methods: {
+    //触发事件
     emit$(eventName, data) {
       if (this.vfEvents[eventName]) {
         this.vfEvents[eventName].forEach((fn) => {
@@ -28,12 +30,14 @@ export default {
         });
       }
     },
-
+    
+    //事件绑定
     on$(eventName, fn) {
       this.vfEvents[eventName] = this.vfEvents[eventName] || [];
       this.vfEvents[eventName].push(fn);
     },
-
+    
+    //移除
     off$(eventName, fn) {
       if (this.vfEvents[eventName]) {
         if ((fn === undefined) || (fn === null)) {
