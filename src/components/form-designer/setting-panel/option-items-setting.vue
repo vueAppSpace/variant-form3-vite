@@ -37,7 +37,7 @@
     <div v-else-if="(selectedWidget.type === 'cascader')" class="full-width-input">
       <el-cascader v-model="optionModel.defaultValue" :options="optionModel.optionItems"
                    @change="emitDefaultValueChange"
-                   :placeholder="i18nt('render.hint.selectPlaceholder')">
+                   :placeholder="'请选择'">
       </el-cascader>
     </div>
     <div v-if="(selectedWidget.type === 'cascader')">
