@@ -30,13 +30,13 @@ export const loadExtension = function (app) {
   app.component(CardItem.name, CardItem)  //注册运行期的容器组件
   /* -------------------------------------------------- */
   PERegister.registerCPEditor(app, 'card-folded', 'card-folded-editor',
-      PEFactory.createBooleanEditor('folded', 'extension.setting.cardFolded'))
+      PEFactory.createBooleanEditor('folded', '是否收起'))
 
   PERegister.registerCPEditor(app, 'card-showFold', 'card-showFold-editor',
-      PEFactory.createBooleanEditor('showFold', 'extension.setting.cardShowFold'))
+      PEFactory.createBooleanEditor('showFold', '显示折叠按钮'))
 
   PERegister.registerCPEditor(app, 'card-cardWidth', 'card-cardWidth-editor',
-      PEFactory.createInputTextEditor('cardWidth', 'extension.setting.cardWidth'))
+      PEFactory.createInputTextEditor('cardWidth', '卡片宽度'))
 
   let shadowOptions = [
     {label: 'never', value: 'never'},
@@ -44,7 +44,7 @@ export const loadExtension = function (app) {
     {label: 'always', value: 'always'},
   ]
   PERegister.registerCPEditor(app, 'card-shadow', 'card-shadow-editor',
-      PEFactory.createSelectEditor('shadow', 'extension.setting.cardShadow',
+      PEFactory.createSelectEditor('shadow', '显示阴影',
           {optionItems: shadowOptions}))
   /* -------------------------------------------------- */
   /* -------------------------------------------------- */
@@ -63,7 +63,7 @@ export const loadExtension = function (app) {
   app.component(AlertWidget.name, AlertWidget)  //注册组件
   /* -------------------------------------------------- */
   PERegister.registerCPEditor(app, 'alert-title', 'alert-title-editor',
-      PEFactory.createInputTextEditor('title', 'extension.setting.alertTitle'))
+      PEFactory.createInputTextEditor('title', '标题'))
 
   let typeOptions = [
     {label: 'success', value: 'success'},
@@ -72,40 +72,37 @@ export const loadExtension = function (app) {
     {label: 'error', value: 'error'},
   ]
   // PERegister.registerCPEditor(app, 'alert-type', 'alert-type-editor',
-  //     PEFactory.createSelectEditor('type', 'extension.setting.alertType',
+  //     PEFactory.createSelectEditor('type', '类型',
   //         {optionItems: typeOptions}))
   /* type属性映射已存在，无须再注册，故只需注册属性编辑器即可！！ */
   app.component('alert-type-editor',
-      PEFactory.createSelectEditor('type', 'extension.setting.alertType',
+      PEFactory.createSelectEditor('type', '类型',
           {optionItems: typeOptions}))
 
   PERegister.registerCPEditor(app, 'alert-description', 'alert-description-editor',
-      PEFactory.createInputTextEditor('description', 'extension.setting.description'))
+      PEFactory.createInputTextEditor('description', '辅助性文字'))
 
   PERegister.registerCPEditor(app, 'alert-closable', 'alert-closable-editor',
-      PEFactory.createBooleanEditor('closable', 'extension.setting.closable'))
+      PEFactory.createBooleanEditor('closable', '是否可关闭'))
 
   PERegister.registerCPEditor(app, 'alert-closeText', 'alert-closeText-editor',
-      PEFactory.createInputTextEditor('closeText', 'extension.setting.closeText'))
+      PEFactory.createInputTextEditor('closeText', '关闭按钮文字'))
 
   PERegister.registerCPEditor(app, 'alert-center', 'alert-center-editor',
-      PEFactory.createBooleanEditor('center', 'extension.setting.center'))
+      PEFactory.createBooleanEditor('center', '文字居中'))
 
   PERegister.registerCPEditor(app, 'alert-showIcon', 'alert-showIcon-editor',
-      PEFactory.createBooleanEditor('showIcon', 'extension.setting.showIcon'))
+      PEFactory.createBooleanEditor('showIcon', '显示图标'))
 
   let effectOptions = [
     {label: 'light', value: 'light'},
     {label: 'dark', value: 'dark'},
   ]
   PERegister.registerCPEditor(app, 'alert-effect', 'alert-effect-editor',
-      PEFactory.createRadioButtonGroupEditor('effect', 'extension.setting.effect',
+      PEFactory.createRadioButtonGroupEditor('effect', '显示效果',
           {optionItems: effectOptions}))
 
   PERegister.registerEPEditor(app, 'alert-onClose', 'alert-onClose-editor',
       PEFactory.createEventHandlerEditor('onClose', []))
-  /* -------------------------------------------------- */
-
-  /* -------------------------------------------------- */
   /* 字段组件加载完毕 end */
 }

@@ -183,7 +183,7 @@
         }
         fileSizeCheckResult = file.size / 1024 / 1024 <= uploadFileMaxSize
         if (!fileSizeCheckResult) {
-          this.$message.error(this.$('render.hint.fileSizeExceed') + uploadFileMaxSize + 'MB')
+          this.$message.error('文件大小已超出: '+ uploadFileMaxSize + 'MB')
           return false;
         }
 
