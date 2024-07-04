@@ -37,7 +37,7 @@
     </div>
 
     <div class="grid-col-handler" v-if="designer.selectedId === widget.id && widget.type === 'grid-col'">
-      <i>{{i18nt('designer.widgetLabel.' + widget.type)}}</i>
+      <i>{{PageTextMap.designer.widgetLabel[widget.type]}}</i>
     </div>
   </el-col>
 </template>
@@ -47,6 +47,7 @@
   import FieldComponents from '@/components/form-designer/form-widget/field-widget/index'
   import refMixinDesign from "@/components/form-designer/refMixinDesign"
   import SvgIcon from '@/components/svg-icon'
+  import PageTextMap from "@/lang/zh-CN"
 
   export default {
     name: "GridColWidget",
@@ -80,7 +81,8 @@
           offset: this.widget.options.offset || 0,
           push: this.widget.options.push || 0,
           pull: this.widget.options.pull || 0,
-        }
+        },
+        PageTextMap
       }
     },
     computed: {

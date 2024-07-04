@@ -53,7 +53,7 @@
 
       <div class="drag-handler background-opacity" v-if="designer.selectedId === field.id">
         <i :title="'拖拽手柄'"><svg-icon icon-class="el-drag-move" /></i>
-        <i>{{i18nt(`designer.widgetLabel.${field.type}`)}}</i>
+        <i>{{PageTextMap.designer.widgetLabel[field.type]}}</i>
         <i v-if="field.options.hidden === true"><svg-icon icon-class="el-hide" /></i>
       </div>
     </template>
@@ -63,6 +63,7 @@
 <script>
   import i18n from "@/utils/i18n";
   import SvgIcon from '@/components/svg-icon'
+  import PageTextMap from "@/lang/zh-CN"
 
   export default {
     name: "form-item-wrapper",
@@ -98,6 +99,11 @@
       rules: Array,
     },
     inject: ['getFormConfig'],
+    data(){
+      return {
+        PageTextMap
+      }
+    },
     computed: {
       formConfig() {
         return this.getFormConfig()

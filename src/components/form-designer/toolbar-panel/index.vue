@@ -1,23 +1,23 @@
 <template>
   <div class="toolbar-container">
     <div class="left-toolbar">
-      <el-button link type="primary" :disabled="undoDisabled" :title="i18nt('designer.toolbar.undoHint')" @click="undoHistory">
+      <el-button link type="primary" :disabled="undoDisabled" :title="'撤销'" @click="undoHistory">
         <svg-icon icon-class="undo" /></el-button>
-      <el-button link type="primary" :disabled="redoDisabled" :title="i18nt('designer.toolbar.redoHint')" @click="redoHistory">
+      <el-button link type="primary" :disabled="redoDisabled" :title="'重做'" @click="redoHistory">
         <svg-icon icon-class="redo" /></el-button>
       <el-button-group style="margin-left: 20px">
         <el-button :type="layoutType === 'PC' ? 'info': ''" @click="changeLayoutType('PC')">
-          {{i18nt('designer.toolbar.pcLayout')}}</el-button>
+          PC</el-button>
         <el-button :type="layoutType === 'Pad' ? 'info': ''" @click="changeLayoutType('Pad')">
-          {{i18nt('designer.toolbar.padLayout')}}</el-button>
+          Pad</el-button>
         <el-button :type="layoutType === 'H5' ? 'info': ''" @click="changeLayoutType('H5')">
-          {{i18nt('designer.toolbar.mobileLayout')}}</el-button>
+          H5</el-button>
       </el-button-group>
-      <el-button style="margin-left: 20px" :title="i18nt('designer.toolbar.nodeTreeHint')" @click="showNodeTreeDrawer">
+      <el-button style="margin-left: 20px" :title="'组件层次结构树'" @click="showNodeTreeDrawer">
         <svg-icon icon-class="node-tree" /></el-button>
     </div>
 
-    <el-drawer :title="i18nt('designer.toolbar.nodeTreeTitle')" direction="ltr" v-model="showNodeTreeDrawerFlag" :modal="true" :size="280"
+    <el-drawer :title="'组件层次结构树'" direction="ltr" v-model="showNodeTreeDrawerFlag" :modal="true" :size="280"
                :destroy-on-close="true" class="node-tree-drawer">
       <el-tree ref="nodeTree" :data="nodeTreeData" node-key="id" default-expand-all highlight-current class="node-tree"
                icon-class="el-icon-arrow-right" @node-click="onNodeTreeClick"></el-tree>
@@ -26,17 +26,17 @@
     <div class="right-toolbar" :style="{width: toolbarWidth + 'px'}">
       <div class="right-toolbar-con">
         <el-button v-if="showToolButton('clearDesignerButton')" link type="primary" @click="clearFormWidget">
-          <svg-icon icon-class="el-delete" />{{i18nt('designer.toolbar.clear')}}</el-button>
+          <svg-icon icon-class="el-delete" />清空</el-button>
         <el-button v-if="showToolButton('previewFormButton')" link type="primary" @click="previewForm">
-          <svg-icon icon-class="el-view" />{{i18nt('designer.toolbar.preview')}}</el-button>
+          <svg-icon icon-class="el-view" />预览</el-button>
         <el-button v-if="showToolButton('importJsonButton')" link type="primary" @click="importJson">
-          {{i18nt('designer.toolbar.importJson')}}</el-button>
+          导入JSON</el-button>
         <el-button v-if="showToolButton('exportJsonButton')" link type="primary" @click="exportJson">
-          {{i18nt('designer.toolbar.exportJson')}}</el-button>
+          导出JSON</el-button>
         <el-button v-if="showToolButton('exportCodeButton')" link type="primary" @click="exportCode">
-          {{i18nt('designer.toolbar.exportCode')}}</el-button>
+          导出代码</el-button>
         <el-button v-if="showToolButton('generateSFCButton')" link type="primary" @click="generateSFC">
-          <svg-icon icon-class="vue-sfc" />{{i18nt('designer.toolbar.generateSFC')}}</el-button>
+          <svg-icon icon-class="vue-sfc" />生成SFC</el-button>
         <template v-for="(idx, slotName) in $slots">
           <slot :name="slotName"></slot>
         </template>
@@ -45,7 +45,7 @@
     
     <!-- 预览弹窗 -->
     <div v-if="showPreviewDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.toolbar.preview')" v-model="showPreviewDialogFlag"
+      <el-dialog :title="'预览'" v-model="showPreviewDialogFlag"
                  :show-close="true" :close-on-click-modal="false" :close-on-press-escape="false" center
                  :destroy-on-close="true" :append-to-body="true" class="drag-dialog small-padding-dialog" width="75%"
                  :fullscreen="(layoutType === 'H5') || (layoutType === 'Pad')">
@@ -75,7 +75,7 @@
     </div>
 
     <div v-if="showImportJsonDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.toolbar.importJson')" v-model="showImportJsonDialogFlag"
+      <el-dialog :title="'导入JSON'" v-model="showImportJsonDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" :append-to-body="true" center
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <el-alert type="info" :title="'导入的JSON内容须符合下述格式，以保证顺利导入.'" show-icon class="alert-padding"></el-alert>
@@ -92,7 +92,7 @@
     </div>
 
     <div v-if="showExportJsonDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.toolbar.exportJson')" v-model="showExportJsonDialogFlag"
+      <el-dialog :title="'导出JSON'" v-model="showExportJsonDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" center append-to-body
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <code-editor :mode="'json'" :readonly="true" v-model="jsonContent"></code-editor>
@@ -109,7 +109,7 @@
     </div>
 
     <div v-if="showExportCodeDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.toolbar.exportCode')" v-model="showExportCodeDialogFlag"
+      <el-dialog :title="'导出代码'" v-model="showExportCodeDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" center append-to-body
                  width="65%" :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <el-tabs type="border-card" class="no-box-shadow no-padding" v-model="activeCodeTab">
@@ -156,7 +156,7 @@
     </div>
 
     <div v-if="showExportSFCDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.toolbar.generateSFC')" v-model="showExportSFCDialogFlag" append-to-body
+      <el-dialog :title="'生成SFC'" v-model="showExportSFCDialogFlag" append-to-body
                  v-if="showExportSFCDialogFlag" :show-close="true" class="drag-dialog small-padding-dialog" center
                  width="65%" :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <el-tabs type="border-card" class="no-box-shadow no-padding" v-model="activeSFCTab">

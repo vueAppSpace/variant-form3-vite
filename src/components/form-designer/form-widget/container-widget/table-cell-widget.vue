@@ -49,7 +49,7 @@
     </div>
 
     <div class="table-cell-handler" v-if="designer.selectedId === widget.id && widget.type === 'table-cell'">
-      <i>{{i18nt('designer.widgetLabel.' + widget.type)}}</i>
+      <i>{{PageTextMap.designer.widgetLabel[widget.type]}}</i>
     </div>
   </td>
 </template>
@@ -59,6 +59,7 @@
   import FieldComponents from '@/components/form-designer/form-widget/field-widget/index'
   import refMixinDesign from "@/components/form-designer/refMixinDesign"
   import SvgIcon from '@/components/svg-icon'
+  import PageTextMap from "@/lang/zh-CN"
 
   export default {
     name: "TableCellWidget",
@@ -82,6 +83,11 @@
       rowArray: Array,
 
       designer: Object,
+    },
+    data(){
+      return {
+        PageTextMap
+      }
     },
     computed: {
       selected() {

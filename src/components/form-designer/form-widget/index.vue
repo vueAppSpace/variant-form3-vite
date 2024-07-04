@@ -6,7 +6,7 @@
 
       <!-- 编辑区没有内容时提示信息 -->
       <template v-if="designer.widgetList.length === 0">
-        <div class="no-widget-hint">{{i18nt('designer.noWidgetHint')}}</div>
+        <div class="no-widget-hint">请从左侧列表中选择一个组件, 然后用鼠标拖动组件放置于此处.</div>
       </template>
 
       <div class="form-widget-list">
