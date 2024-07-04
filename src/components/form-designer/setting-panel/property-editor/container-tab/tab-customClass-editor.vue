@@ -35,14 +35,14 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n"
+  
   //import Draggable from 'vuedraggable'
   import {deepClone} from "@/utils/util";
 
   export default {
     name: "tab-customClass-editor",
     componentName: 'PropertyEditor',
-    mixins: [i18n],
+    
     components: {
       //Draggable,
     },

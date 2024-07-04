@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n"
+  
   import containerMixin from "@/components/form-designer/form-widget/container-widget/containerMixin"
   import ContainerWrapper from "@/components/form-designer/form-widget/container-widget/container-wrapper"
   import FieldComponents from '@/components/form-designer/form-widget/field-widget/index'
@@ -49,7 +49,7 @@
   export default {
     name: "card-widget",
     componentName: 'ContainerWidget',
-    mixins: [i18n, containerMixin, refMixinDesign],
+    mixins: [ containerMixin, refMixinDesign],
     inject: ['refList'],
     components: {
       ContainerWrapper,

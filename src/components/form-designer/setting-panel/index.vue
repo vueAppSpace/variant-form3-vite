@@ -102,7 +102,7 @@
   import {
     addWindowResizeHandler,
   } from "@/utils/util"
-  import i18n from "@/utils/i18n"
+  
   import eventBus from "@/utils/event-bus"
   import emitter from "@/utils/emitter";
   import { propertyRegistered } from "@/components/form-designer/setting-panel/propertyRegister";
@@ -112,7 +112,7 @@
   export default {
     name: "SettingPanel",
     componentName: "SettingPanel",
-    mixins: [i18n, emitter],
+    mixins: [ emitter],
     components: {
       CodeEditor,
       FormSetting,

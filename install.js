@@ -12,13 +12,11 @@ import ContainerWidgets from '@/components/form-designer/form-widget/container-w
 import ContainerItems from '@/components/form-render/container-item/index'
 
 import { addDirective } from '@/utils/directive'
-import { installI18n } from '@/utils/i18n'
 import { loadExtension } from '@/extension/extension-loader'
 
 
 VFormDesigner.install = function (app) {
   addDirective(app)
-  installI18n(app)
   loadExtension(app)
 
   app.use(ContainerWidgets)
@@ -30,7 +28,6 @@ VFormDesigner.install = function (app) {
 }
 
 VFormRender.install = function (app) {
-  installI18n(app)
   loadExtension(app)
 
   app.use(ContainerItems)
@@ -46,7 +43,6 @@ const components = [
 
 const install = (app) => {
   addDirective(app)
-  installI18n(app)
   loadExtension(app)
 
   app.use(ContainerWidgets)

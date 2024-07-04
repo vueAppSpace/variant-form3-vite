@@ -10,13 +10,9 @@ import * as PEFactory from '@/components/form-designer/setting-panel/property-ed
 import {cardSchema} from "@/extension/samples/extension-schema"
 import CardWidget from '@/extension/samples/card/card-widget'
 import CardItem from '@/extension/samples/card/card-item'
-import {registerCWGenerator} from '@/utils/sfc-generator'
-import {cardTemplateGenerator} from '@/extension/samples/extension-sfc-generator'
 
 import {alertSchema} from "@/extension/samples/extension-schema"
 import AlertWidget from '@/extension/samples/alert/alert-widget'
-import {registerFWGenerator} from '@/utils/sfc-generator'
-import {alertTemplateGenerator} from '@/extension/samples/extension-sfc-generator'
 
 export const loadExtension = function (app) {
 
@@ -51,7 +47,6 @@ export const loadExtension = function (app) {
       PEFactory.createSelectEditor('shadow', 'extension.setting.cardShadow',
           {optionItems: shadowOptions}))
   /* -------------------------------------------------- */
-  registerCWGenerator('card', cardTemplateGenerator)  //注册容器组件的代码生成器
   /* -------------------------------------------------- */
   /* 容器组件加载完毕 end */
 
@@ -110,7 +105,7 @@ export const loadExtension = function (app) {
   PERegister.registerEPEditor(app, 'alert-onClose', 'alert-onClose-editor',
       PEFactory.createEventHandlerEditor('onClose', []))
   /* -------------------------------------------------- */
-  registerFWGenerator('alert', alertTemplateGenerator)  //注册字段组件的代码生成器
+
   /* -------------------------------------------------- */
   /* 字段组件加载完毕 end */
 }

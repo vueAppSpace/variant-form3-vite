@@ -12,13 +12,13 @@
 <script>
   import StaticContentWrapper from '@/components/form-designer/form-widget/field-widget/static-content-wrapper'
   import emitter from '@/utils/emitter'
-  import i18n from "@/utils/i18n"
+  
   import fieldMixin from "@/components/form-designer/form-widget/field-widget/fieldMixin"
 
   export default {
     name: "alert-widget",
     componentName: 'FieldWidget',  //必须固定为FieldWidget，用于接收父级组件的broadcast事件
-    mixins: [emitter, fieldMixin, i18n],
+    mixins: [emitter, fieldMixin],
     props: {
       field: Object,
       parentWidget: Object,

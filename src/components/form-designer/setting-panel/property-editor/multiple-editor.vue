@@ -5,12 +5,12 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n"
+  
   import propertyMixin from "@/components/form-designer/setting-panel/property-editor/propertyMixin"
 
   export default {
     name: "multiple-editor",
-    mixins: [i18n, propertyMixin],
+    mixins: [ propertyMixin],
     props: {
       designer: Object,
       selectedWidget: Object,

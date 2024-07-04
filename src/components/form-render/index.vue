@@ -46,12 +46,12 @@
     generateId, deepClone, insertCustomCssToHead, insertGlobalFunctionsToHtml, getAllContainerWidgets,
     getAllFieldWidgets, traverseFieldWidgets, buildDefaultFormJson
   } from "@/utils/util"
-  import i18n, { changeLocale } from "@/utils/i18n"
+  
 
   export default {
     name: "VFormRender",
     componentName: 'VFormRender',
-    mixins: [emitter, i18n],
+    mixins: [emitter],
     components: {
       //ElForm,
 
@@ -154,7 +154,6 @@
       this.initFormObject()
     },
     mounted() {
-      this.initLocale()
       this.handleOnMounted()
     },
     methods: {
@@ -179,11 +178,6 @@
 
       getWidgetName(widget) {
         return widget.type + '-widget'
-      },
-
-      initLocale() {
-        let curLocale = localStorage.getItem('v_form_locale') || 'zh-CN'
-        this.changeLanguage(curLocale)
       },
 
       insertCustomStyleAndScriptNode() {

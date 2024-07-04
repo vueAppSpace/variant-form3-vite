@@ -7,11 +7,11 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n"
+  
 
   export default {
     name: "columnWidth-editor",
-    mixins: [i18n],
+    
     props: {
       designer: Object,
       selectedWidget: Object,

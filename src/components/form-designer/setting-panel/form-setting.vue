@@ -134,13 +134,13 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n"
+  
   import CodeEditor from '@/components/code-editor/index'
   import {deepClone, insertCustomCssToHead, insertGlobalFunctionsToHtml} from "@/utils/util"
 
   export default {
     name: "form-setting",
-    mixins: [i18n],
+    
     components: {
       CodeEditor,
     },

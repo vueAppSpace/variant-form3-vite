@@ -25,7 +25,7 @@
 
 <script>
   import emitter from '@/utils/emitter'
-  import i18n from "../../../utils/i18n"
+  
   import refMixin from "../../../components/form-render/refMixin"
   import ContainerItemWrapper from './container-item-wrapper'
   import TableCellItem from './table-cell-item'
@@ -34,7 +34,7 @@
   export default {
     name: "table-item",
     componentName: 'ContainerItem',
-    mixins: [emitter, i18n, refMixin, containerItemMixin],
+    mixins: [emitter, refMixin, containerItemMixin],
     components: {
       ContainerItemWrapper,
       TableCellItem,

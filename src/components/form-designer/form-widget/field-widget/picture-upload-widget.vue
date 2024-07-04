@@ -55,7 +55,7 @@
 <script>
   import FormItemWrapper from './form-item-wrapper'
   import emitter from '@/utils/emitter'
-  import i18n, {translate} from "@/utils/i18n";
+  
   import {deepClone, evalFn} from "@/utils/util";
   import fieldMixin from "@/components/form-designer/form-widget/field-widget/fieldMixin";
   import SvgIcon from "@/components/svg-icon/index";
@@ -63,7 +63,7 @@
   export default {
     name: "picture-upload-widget",
     componentName: 'FieldWidget',  //必须固定为FieldWidget，用于接收父级组件的broadcast事件
-    mixins: [emitter, fieldMixin, i18n],
+    mixins: [emitter, fieldMixin],
     props: {
       field: Object,
       parentWidget: Object,

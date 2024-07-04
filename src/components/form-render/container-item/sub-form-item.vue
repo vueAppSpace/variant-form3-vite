@@ -64,7 +64,7 @@
 
 <script>
   import emitter from '@/utils/emitter'
-  import i18n from '@/utils/i18n'
+  
   import {deepClone, generateId} from '@/utils/util'
   import refMixin from '../../../components/form-render/refMixin'
   import ContainerItemWrapper from './container-item-wrapper'
@@ -75,7 +75,7 @@
   export default {
     name: "sub-form-item",
     componentName: 'ContainerItem',
-    mixins: [emitter, i18n, refMixin, containerItemMixin],
+    mixins: [emitter, refMixin, containerItemMixin],
     components: {
       ContainerItemWrapper,
       ...FieldComponents,

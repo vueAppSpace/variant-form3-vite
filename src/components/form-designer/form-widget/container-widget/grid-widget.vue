@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n"
+  
   import GridColWidget from "@/components/form-designer/form-widget/container-widget/grid-col-widget"
   import containerMixin from "@/components/form-designer/form-widget/container-widget/containerMixin";
   import ContainerWrapper from "@/components/form-designer/form-widget/container-widget/container-wrapper";
@@ -35,7 +35,7 @@
   export default {
     name: "grid-widget",
     componentName: 'ContainerWidget',
-    mixins: [i18n, containerMixin, refMixinDesign],
+    mixins: [ containerMixin, refMixinDesign],
     inject: ['refList'],
     components: {
       ContainerWrapper,

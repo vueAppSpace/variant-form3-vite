@@ -37,12 +37,12 @@
 <script>
   import '@/components/form-designer/form-widget/container-widget/index'
   import FieldComponents from '@/components/form-designer/form-widget/field-widget/index'
-  import i18n from "@/utils/i18n"
+  
 
   export default {
     name: "VFormWidget",
     componentName: "VFormWidget",
-    mixins: [i18n],
+    
     components: {
       ...FieldComponents,
     },

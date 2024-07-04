@@ -13,18 +13,9 @@
   <el-container class="main-container full-height">
     <el-header class="main-header">
       <div class="float-left main-title">
-        <img src="../../assets/vform-logo.png" @click="openHome">
-        <span class="bold">VForm 3</span>表单设计器<span class="version-span">Ver {{vFormVersion}}</span></div>
+        <span class="bold">页面设计器</span>
+      </div>
       <div class="float-right external-link">
-        <el-dropdown v-if="showLink('languageMenu')" :hide-timeout="2000" @command="handleLanguageChanged">
-          <span class="el-dropdown-link">{{curLangName}}<svg-icon icon-class="el-arrow-down" /></span>
-          <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item command="zh-CN">简体中文</el-dropdown-item>
-              <el-dropdown-item command="en-US">English</el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
         <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, gitUrl)" target="_blank"><svg-icon icon-class="github" />GitHub</a>
         <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, docUrl)" target="_blank"><svg-icon icon-class="document" />文档</a>
         <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, chatUrl)" target="_blank">技术WX群</a>
@@ -75,15 +66,15 @@
   import {createDesigner} from "@/components/form-designer/designer"
   import {addWindowResizeHandler, deepClone, getQueryParam, getAllContainerWidgets,
     getAllFieldWidgets, traverseAllWidgets} from "@/utils/util"
-  import {MOCK_CASE_URL, VARIANT_FORM_VERSION} from "@/utils/config"
-  import i18n, { changeLocale } from "@/utils/i18n"
+  import {MOCK_CASE_URL} from "@/utils/config"
+  
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index"
 
   export default {
     name: "VFormDesigner",
     componentName: "VFormDesigner",
-    mixins: [i18n],
+    
     components: {
       SvgIcon,
       WidgetPanel,
@@ -140,9 +131,6 @@
     },
     data() {
       return {
-        vFormVersion: VARIANT_FORM_VERSION,
-        curLangName: '',
-        curLocale: '',
 
         vsCodeFlag: false,
         caseName: '',
@@ -171,8 +159,6 @@
       this.caseName = getQueryParam('case')
     },
     mounted() {
-      this.initLocale()
-
       this.scrollerHeight = window.innerHeight - 56 - 36 + 'px'
       addWindowResizeHandler(() => {
         this.$nextTick(() => {
@@ -197,34 +183,6 @@
         return !!this.designerConfig[configName]
       },
 
-      openHome() {
-        if (!!this.vsCodeFlag) {
-          const msgObj = {
-            cmd: 'openUrl',
-            data: {
-              url: 'https://www.vform666.com/'
-            }
-          }
-          window.parent.postMessage(msgObj, '*')
-        }
-      },
-
-      openUrl(event, url) {
-        if (!!this.vsCodeFlag) {
-          const msgObj = {
-            cmd: 'openUrl',
-            data: {
-              url
-            }
-          }
-          window.parent.postMessage(msgObj, '*')
-        } else {
-          let aDom = event.currentTarget
-          aDom.href = url
-          //window.open(url, '_blank') //直接打开新窗口，会被浏览器拦截
-        }
-      },
-
       loadCase() {
         if (!this.caseName) {
           return
@@ -243,16 +201,6 @@
         })
       },
 
-      initLocale() {
-        this.curLocale = localStorage.getItem('v_form_locale')
-        if (!!this.vsCodeFlag) {
-          this.curLocale = this.curLocale || 'en-US'
-        } else {
-          this.curLocale = this.curLocale || 'zh-CN'
-        }
-        this.curLangName = '简体中文'
-        this.changeLanguage(this.curLocale)
-      },
 
       loadFieldListFromServer() {
         if (!this.fieldListApi) {
@@ -275,15 +223,7 @@
           this.$message.error(error)
         })
       },
-
-      handleLanguageChanged(command) {
-        this.changeLanguage(command)
-        this.curLangName = '简体中文'
-      },
-
-      changeLanguage(langName) {
-        changeLocale(langName)
-      },
+   
 
       setFormJson(formJson) {
         let modifiedFlag = false

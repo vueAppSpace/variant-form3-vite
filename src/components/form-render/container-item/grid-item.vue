@@ -21,7 +21,7 @@
 
 <script>
   import emitter from '@/utils/emitter'
-  import i18n from "../../../utils/i18n"
+  
   import refMixin from "../../../components/form-render/refMixin"
   import ContainerItemWrapper from './container-item-wrapper'
   import GridColItem from './grid-col-item'
@@ -30,7 +30,7 @@
   export default {
     name: "vf-grid-item", //grid-item跟VueGridLayout全局注册组件重名，故特殊处理！！
     componentName: 'ContainerItem',
-    mixins: [emitter, i18n, refMixin, containerItemMixin],
+    mixins: [emitter, refMixin, containerItemMixin],
     components: {
       ContainerItemWrapper,
       GridColItem,

@@ -1,4 +1,3 @@
-import {translate} from "@/utils/i18n"
 import emitter from '@/utils/emitter'
 
 export const createInputTextEditor = function (propName, propLabelKey) {
@@ -8,7 +7,7 @@ export const createInputTextEditor = function (propName, propLabelKey) {
     },
     render(h) {
       return (
-        <el-form-item label={translate(propLabelKey)}>
+        <el-form-item label={propLabelKey}>
           <el-input type="text" v-model={this.optionModel[propName]} />
         </el-form-item>
       )

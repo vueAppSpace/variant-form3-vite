@@ -33,10 +33,6 @@
           导入JSON</el-button>
         <el-button v-if="showToolButton('exportJsonButton')" link type="primary" @click="exportJson">
           导出JSON</el-button>
-        <el-button v-if="showToolButton('exportCodeButton')" link type="primary" @click="exportCode">
-          导出代码</el-button>
-        <el-button v-if="showToolButton('generateSFCButton')" link type="primary" @click="generateSFC">
-          <svg-icon icon-class="vue-sfc" />生成SFC</el-button>
         <template v-for="(idx, slotName) in $slots">
           <slot :name="slotName"></slot>
         </template>
@@ -108,33 +104,6 @@
       </el-dialog>
     </div>
 
-    <div v-if="showExportCodeDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="'导出代码'" v-model="showExportCodeDialogFlag"
-                 :show-close="true" class="drag-dialog small-padding-dialog" center append-to-body
-                 width="65%" :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
-        <el-tabs type="border-card" class="no-box-shadow no-padding" v-model="activeCodeTab">
-          <el-tab-pane label="Vue" name="vue">
-            <code-editor :mode="'html'" :readonly="true" v-model="vueCode" :user-worker="false"></code-editor>
-          </el-tab-pane>
-          <el-tab-pane label="HTML" name="html">
-            <code-editor :mode="'html'" :readonly="true" v-model="htmlCode" :user-worker="false"></code-editor>
-          </el-tab-pane>
-        </el-tabs>
-        <template #footer>
-          <div class="dialog-footer">
-            <el-button type="primary" class="copy-vue-btn" :data-clipboard-text="vueCode" @click="copyVueCode">
-              复制Vue代码</el-button>
-            <el-button type="primary" class="copy-html-btn" :data-clipboard-text="htmlCode" @click="copyHtmlCode">
-              复制HTML代码</el-button>
-            <el-button @click="saveVueCode">保存Vue文件</el-button>
-            <el-button @click="saveHtmlCode">保存Html文件</el-button>
-            <el-button @click="showExportCodeDialogFlag = false">
-              关闭</el-button>
-          </div>
-        </template>
-      </el-dialog>
-    </div>
-
     <div v-if="showFormDataDialogFlag" class="" v-drag="['.nested-drag-dialog.el-dialog', '.nested-drag-dialog .el-dialog__header']">
       <el-dialog :title="'表单数据'" v-model="showFormDataDialogFlag"
                  :show-close="true" class="nested-drag-dialog dialog-title-light-bg" center
@@ -154,34 +123,6 @@
         </template>
       </el-dialog>
     </div>
-
-    <div v-if="showExportSFCDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="'生成SFC'" v-model="showExportSFCDialogFlag" append-to-body
-                 v-if="showExportSFCDialogFlag" :show-close="true" class="drag-dialog small-padding-dialog" center
-                 width="65%" :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
-        <el-tabs type="border-card" class="no-box-shadow no-padding" v-model="activeSFCTab">
-          <el-tab-pane label="Vue2" name="vue2">
-            <code-editor :mode="'html'" :readonly="true" v-model="sfcCode" :user-worker="false"></code-editor>
-          </el-tab-pane>
-          <el-tab-pane label="Vue3" name="vue3">
-            <code-editor :mode="'html'" :readonly="true" v-model="sfcCodeV3" :user-worker="false"></code-editor>
-          </el-tab-pane>
-        </el-tabs>
-        <template #footer>
-          <div class="dialog-footer">
-            <el-button type="primary" class="copy-vue2-sfc-btn" :data-clipboard-text="sfcCode" @click="copyV2SFC">
-              复制Vue2代码</el-button>
-            <el-button type="primary" class="copy-vue3-sfc-btn" :data-clipboard-text="sfcCodeV3" @click="copyV3SFC">
-              复制Vue3代码</el-button>
-            <el-button @click="saveV2SFC">保存为Vue2组件</el-button>
-            <el-button @click="saveV3SFC">保存为Vue3组件</el-button>
-            <el-button @click="showExportSFCDialogFlag = false">
-              关闭</el-button>
-          </div>
-        </template>
-      </el-dialog>
-    </div>
-
   </div>
 </template>
 
@@ -196,17 +137,14 @@
     getQueryParam,
     traverseAllWidgets, addWindowResizeHandler
   } from "@/utils/util"
-  import i18n from '@/utils/i18n'
-  import {generateCode} from "@/utils/code-generator"
-  import {genSFC} from "@/utils/sfc-generator"
-  import loadBeautifier from "@/utils/beautifierLoader"
+
   import { saveAs } from 'file-saver'
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index";
 
   export default {
     name: "ToolbarPanel",
-    mixins: [i18n],
+    
     components: {
       VFormRender,
       CodeEditor,
@@ -231,7 +169,6 @@
         showExportJsonDialogFlag: false,
         showExportCodeDialogFlag: false,
         showFormDataDialogFlag: false,
-        showExportSFCDialogFlag: false,
         showNodeTreeDrawerFlag: false,
 
         nodeTreeData: [],
@@ -245,13 +182,7 @@
 
         vueCode: '',
         htmlCode: '',
-
-        sfcCode: '',
-        sfcCodeV3: '',
-
-        activeCodeTab: 'vue',
-        activeSFCTab: 'vue2',
-
+        
         testFormData: {
           // 'userName': '666888',
           // 'productItems': [
@@ -536,67 +467,6 @@
         this.saveAsFile(this.jsonContent, `vform${generateId()}.json`)
       },
 
-      exportCode() {
-        this.vueCode = generateCode(this.formJson)
-        this.htmlCode = generateCode(this.formJson, 'html')
-        this.showExportCodeDialogFlag = true
-      },
-
-      copyVueCode(e) {
-        copyToClipboard(this.vueCode, e,
-            this.$message,
-            '复制Vue代码成功',
-            '复制Vue代码失败'
-        )
-      },
-
-      copyHtmlCode(e) {
-        copyToClipboard(this.htmlCode, e,
-            this.$message,
-            '复制HTML代码成功',
-            复制HTML代码失败
-        )
-      },
-
-      saveVueCode() {
-        this.saveAsFile(this.vueCode, `vform${generateId()}.vue`)
-      },
-
-      saveHtmlCode() {
-        this.saveAsFile(this.htmlCode, `vform${generateId()}.html`)
-      },
-
-      generateSFC() {
-        loadBeautifier(beautifier => {
-          this.sfcCode = genSFC(this.designer.formConfig, this.designer.widgetList, beautifier)
-          this.sfcCodeV3 = genSFC(this.designer.formConfig, this.designer.widgetList, beautifier, true)
-          this.showExportSFCDialogFlag = true
-        })
-      },
-
-      copyV2SFC(e) {
-        copyToClipboard(this.sfcCode, e,
-            this.$message,
-            '复制SFC代码成功',
-            '复制SFC代码失败'
-        )
-      },
-
-      copyV3SFC(e) {
-        copyToClipboard(this.sfcCodeV3, e,
-            this.$message,
-           '复制SFC代码成功',
-           '复制SFC代码失败'
-        )
-      },
-
-      saveV2SFC() {
-        this.saveAsFile(this.sfcCode, `vformV2-${generateId()}.vue`)
-      },
-
-      saveV3SFC() {
-        this.saveAsFile(this.sfcCodeV3, `vformV3-${generateId()}.vue`)
-      },
 
       getFormData() {
         this.$refs['preForm'].getFormData().then(formData => {

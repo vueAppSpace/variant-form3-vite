@@ -6,12 +6,12 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n"
+  
   import OptionItemsSetting from "@/components/form-designer/setting-panel/option-items-setting"
 
   export default {
     name: "optionItems-editor",
-    mixins: [i18n],
+    
     props: {
       designer: Object,
       selectedWidget: Object,
