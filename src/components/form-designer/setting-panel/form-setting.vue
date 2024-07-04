@@ -13,15 +13,15 @@
           </el-form-item>
           <el-form-item :label="'标签位置'">
             <el-radio-group v-model="formConfig.labelPosition" class="radio-group-custom">
-              <el-radio-button label="left">左边</el-radio-button>
-              <el-radio-button label="top">顶部</el-radio-button>
+              <el-radio-button value="left" label="左边"/>
+              <el-radio-button value="top" label="顶部"/>
             </el-radio-group>
           </el-form-item>
           <el-form-item :label="'字段标签对齐'">
             <el-radio-group v-model="formConfig.labelAlign" class="radio-group-custom">
-              <el-radio-button label="label-left-align">居左</el-radio-button>
-              <el-radio-button label="label-center-align">居中</el-radio-button>
-              <el-radio-button label="label-right-align">居右</el-radio-button>
+              <el-radio-button value="label-left-align" label="居左"/>
+              <el-radio-button value="label-center-align" label="居中"/>
+              <el-radio-button value="label-right-align" label="居右"/>
             </el-radio-group>
           </el-form-item>
           <el-form-item :label="'标签宽度'">

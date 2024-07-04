@@ -6,14 +6,14 @@
                     :disabled="field.options.disabled" :size="widgetSize"
                     @change="handleChangeEvent">
       <template v-if="!!field.options.buttonStyle">
-        <el-radio-button v-for="(item, index) in field.options.optionItems" :key="index" :label="item.value"
+        <el-radio-button v-for="(item, index) in field.options.optionItems" :key="index" :value="item.value" :label="item.label"
                          :disabled="item.disabled" :border="field.options.border"
-                         :style="{display: field.options.displayStyle}">{{item.label}}</el-radio-button>
+                         :style="{display: field.options.displayStyle}"/>
       </template>
       <template v-else>
-        <el-radio v-for="(item, index) in field.options.optionItems" :key="index" :label="item.value"
+        <el-radio v-for="(item, index) in field.options.optionItems" :key="index" :value="item.value" :label="item.label"
                   :disabled="item.disabled" :border="field.options.border"
-                  :style="{display: field.options.displayStyle}">{{item.label}}</el-radio>
+                  :style="{display: field.options.displayStyle}"/>
       </template>
     </el-radio-group>
   </form-item-wrapper>

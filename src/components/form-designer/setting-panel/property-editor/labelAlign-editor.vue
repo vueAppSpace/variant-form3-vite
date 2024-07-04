@@ -1,12 +1,9 @@
 <template>
   <el-form-item :label="'字段标签对齐'" v-if="!noLabelSetting && (selectedWidget.type !== 'button')">
     <el-radio-group v-model="optionModel.labelAlign" class="radio-group-custom">
-      <el-radio-button label="label-left-align">
-        居左</el-radio-button>
-      <el-radio-button label="label-center-align">
-        居中</el-radio-button>
-      <el-radio-button label="label-right-align">
-        居右</el-radio-button>
+      <el-radio-button value="label-left-align" label="居左"/>
+      <el-radio-button value="label-center-align"  label="居中"/>
+      <el-radio-button value="label-right-align"  label="居右"/>
     </el-radio-group>
   </el-form-item>
 </template>
