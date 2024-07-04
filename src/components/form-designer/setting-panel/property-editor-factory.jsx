@@ -66,7 +66,7 @@ export const createCheckboxGroupEditor = function (propName, propLabelKey, confi
           <el-checkbox-group v-model={this.optionModel[propName]}>
             {
               configs.optionItems.map(item => {
-                return <el-checkbox label={item.value}>{item.label}</el-checkbox>
+                return <el-checkbox label={item.label} value={item.value}/>
               })
             }
           </el-checkbox-group>
