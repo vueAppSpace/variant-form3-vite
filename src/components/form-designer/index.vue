@@ -15,12 +15,6 @@
       <div class="float-left main-title">
         <span class="bold">页面设计器</span>
       </div>
-      <div class="float-right external-link">
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, gitUrl)" target="_blank"><svg-icon icon-class="github" />GitHub</a>
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, docUrl)" target="_blank"><svg-icon icon-class="document" />文档</a>
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, chatUrl)" target="_blank">技术WX群</a>
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, subScribeUrl)" target="_blank">订阅Pro<i class="el-icon-top-right"></i></a>
-      </div>
     </el-header>
 
     <el-container>
@@ -412,18 +406,6 @@
   .el-dropdown-link {
     margin-right: 12px;
     cursor: pointer;
-  }
-
-  div.external-link {
-    display: flex;
-    align-items: center;
-
-    a {
-      font-size: 13px;
-      text-decoration: none;
-      margin-right: 10px;
-      color: #606266;
-    }
   }
 
   .el-header.toolbar-header {
