@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.round')">
+  <el-form-item :label="'圆角按钮'">
     <el-switch v-model="optionModel.round"></el-switch>
   </el-form-item>
 </template>

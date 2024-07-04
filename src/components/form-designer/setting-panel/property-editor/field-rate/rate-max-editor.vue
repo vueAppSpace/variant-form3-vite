@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.maxStars')">
+  <el-form-item :label="'最大评分值'">
     <el-input-number v-model="optionModel.max" :min="1" :max="10"
                      class="hide-spin-button" style="width: 100%"></el-input-number>
   </el-form-item>

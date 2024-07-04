@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.multiple')">
+  <el-form-item :label="'选项可多选'">
     <el-switch v-model="optionModel.multiple"></el-switch>
   </el-form-item>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.showStops')">
+  <el-form-item :label="'显示间断点'">
     <el-switch v-model="optionModel.showStops"></el-switch>
   </el-form-item>
 </template>

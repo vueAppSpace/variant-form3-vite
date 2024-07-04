@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.controlsPosition')">
+  <el-form-item :label="'控制按钮位置'">
     <el-select v-model="optionModel.controlsPosition">
       <el-option label="default" value=""></el-option>
       <el-option label="right" value="right"></el-option>

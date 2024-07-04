@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.fontSize')">
+  <el-form-item :label="'字体大小'">
     <el-input v-model="optionModel.fontSize"></el-input>
   </el-form-item>
 </template>

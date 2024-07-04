@@ -2,7 +2,7 @@
   <el-form-item>
     <template #label>
       <span>上传文件类型
-        <el-tooltip effect="light" :content="i18nt('designer.setting.fileTypesHelp')">
+        <el-tooltip effect="light" :content="'支持添加其他文件类型'">
           <svg-icon icon-class="el-info" /></el-tooltip>
       </span>
     </template>

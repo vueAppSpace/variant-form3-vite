@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.showAllLevels')">
+  <el-form-item :label="'显示完整路径'">
     <el-switch v-model="optionModel.showAllLevels"></el-switch>
   </el-form-item>
 </template>

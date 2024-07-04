@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item :label="i18nt('designer.setting.contentHeight')">
+    <el-form-item :label="'内容区高度'">
       <el-input type="text" v-model="optionModel.contentHeight"></el-input>
     </el-form-item>
   </div>

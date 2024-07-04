@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form-item :label="i18nt('designer.setting.htmlContent')">
+    <el-form-item :label="'HTML'">
     </el-form-item>
     <el-form-item label-width="0">
       <el-input type="textarea" v-model="optionModel.htmlContent" :rows="5" class="html-content-editor"></el-input>

@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.buttonIcon')">
+  <el-form-item :label="'按钮Icon'">
     <el-input type="text" v-model="optionModel.icon"></el-input>
   </el-form-item>
 </template>

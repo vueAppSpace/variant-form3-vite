@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.inactiveText')">
+  <el-form-item :label="'关闭时文字描述'">
     <el-input v-model="optionModel.inactiveText"></el-input>
   </el-form-item>
 </template>

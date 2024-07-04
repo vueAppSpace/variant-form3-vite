@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.showText')">
+  <el-form-item :label="'显示辅助文字'">
     <el-switch v-model="optionModel.showText"></el-switch>
   </el-form-item>
 </template>

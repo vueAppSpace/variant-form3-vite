@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.preWrap')">
+  <el-form-item :label="'自动换行'">
     <el-switch v-model="optionModel.preWrap"></el-switch>
   </el-form-item>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.checkStrictly')">
+  <el-form-item :label="'任意级节点可选'">
     <el-switch v-model="optionModel.checkStrictly"></el-switch>
   </el-form-item>
 </template>

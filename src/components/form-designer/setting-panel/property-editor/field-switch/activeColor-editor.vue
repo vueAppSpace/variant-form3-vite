@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.activeColor')">
+  <el-form-item :label="'开启时背景色'">
     <el-color-picker v-model="optionModel.activeColor"></el-color-picker>
   </el-form-item>
 </template>

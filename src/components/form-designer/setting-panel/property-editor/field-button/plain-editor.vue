@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.plain')">
+  <el-form-item :label="'朴素按钮'">
     <el-switch v-model="optionModel.plain"></el-switch>
   </el-form-item>
 </template>

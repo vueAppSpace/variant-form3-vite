@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.textContent')">
+  <el-form-item :label="'静态文字'">
     <el-input v-model="optionModel.textContent" type="textarea" :rows="3"></el-input>
   </el-form-item>
 </template>

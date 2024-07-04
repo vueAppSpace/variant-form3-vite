@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.format')">
+  <el-form-item :label="'显示格式'">
     <el-select v-model="optionModel.format" filterable allow-create>
       <el-option label="YYYY-MM-DD" value="YYYY-MM-DD"></el-option>
       <el-option label="YYYY/MM/DD" value="YYYY/MM/DD"></el-option>
