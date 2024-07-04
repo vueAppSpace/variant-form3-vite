@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.showFileList')">
+  <el-form-item :label="'显示文件列表'">
     <el-switch v-model="optionModel.showFileList"></el-switch>
   </el-form-item>
 </template>

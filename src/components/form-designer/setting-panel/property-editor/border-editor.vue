@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.border')">
+  <el-form-item :label="'带有边框'">
     <el-switch v-model="optionModel.border"></el-switch>
   </el-form-item>
 </template>

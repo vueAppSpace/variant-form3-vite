@@ -46,7 +46,7 @@
            @click.stop="moveUpWidget(field)"><svg-icon icon-class="el-move-up" /></i>
         <i v-if="!!parentList && (parentList.length > 1)" :title="'下移组件'"
            @click.stop="moveDownWidget(field)"><svg-icon icon-class="el-move-down" /></i>
-        <i :title="移除组件" @click.stop="removeFieldWidget">
+        <i :title="'移除组件'" @click.stop="removeFieldWidget">
           <svg-icon icon-class="el-delete" />
         </i>
       </div>

@@ -3,77 +3,77 @@
     <el-form :model="formConfig" size="small" label-position="left" label-width="120px"
              class="setting-form" @submit.prevent>
       <el-collapse v-model="formActiveCollapseNames" class="setting-collapse">
-        <el-collapse-item name="1" :title="i18nt('designer.setting.basicSetting')">
-          <el-form-item :label="i18nt('designer.setting.formSize')">
+        <el-collapse-item name="1" :title="'基本属性'">
+          <el-form-item :label="'全局组件大小'">
             <el-select v-model="formConfig.size">
               <el-option v-for="item in formSizes" :key="item.value" :label="item.label"
                          :value="item.value">
               </el-option>
             </el-select>
           </el-form-item>
-          <el-form-item :label="i18nt('designer.setting.labelPosition')">
+          <el-form-item :label="'标签位置'">
             <el-radio-group v-model="formConfig.labelPosition" class="radio-group-custom">
-              <el-radio-button label="left">{{i18nt('designer.setting.leftPosition')}}</el-radio-button>
-              <el-radio-button label="top">{{i18nt('designer.setting.topPosition')}}</el-radio-button>
+              <el-radio-button label="left">左边</el-radio-button>
+              <el-radio-button label="top">顶部</el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item :label="i18nt('designer.setting.labelAlign')">
+          <el-form-item :label="'字段标签对齐'">
             <el-radio-group v-model="formConfig.labelAlign" class="radio-group-custom">
-              <el-radio-button label="label-left-align">{{i18nt('designer.setting.leftAlign')}}</el-radio-button>
-              <el-radio-button label="label-center-align">{{i18nt('designer.setting.centerAlign')}}</el-radio-button>
-              <el-radio-button label="label-right-align">{{i18nt('designer.setting.rightAlign')}}</el-radio-button>
+              <el-radio-button label="label-left-align">居左</el-radio-button>
+              <el-radio-button label="label-center-align">居中</el-radio-button>
+              <el-radio-button label="label-right-align">居右</el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item :label="i18nt('designer.setting.labelWidth')">
+          <el-form-item :label="'标签宽度'">
             <el-input-number v-model="formConfig.labelWidth" :min="0" style="width: 100%"></el-input-number>
           </el-form-item>
-          <el-form-item :label="i18nt('designer.setting.formCss')">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editFormCss">{{i18nt('designer.setting.addCss')}}</el-button>
+          <el-form-item :label="'表单全局CSS'">
+            <el-button type="info" icon="el-icon-edit" plain round @click="editFormCss">编写CSS</el-button>
           </el-form-item>
           <!-- -->
-          <el-form-item :label="i18nt('designer.setting.customClass')">
+          <el-form-item :label="'自定义CSS样式'">
             <el-select v-model="formConfig.customClass" multiple filterable allow-create
                        default-first-option>
               <el-option v-for="(item, idx) in cssClassList" :key="idx" :label="item" :value="item"></el-option>
             </el-select>
           </el-form-item>
           <!-- -->
-          <el-form-item :label="i18nt('designer.setting.globalFunctions')">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editGlobalFunctions">{{i18nt('designer.setting.addEventHandler')}}</el-button>
+          <el-form-item :label="'表单全局函数'">
+            <el-button type="info" icon="el-icon-edit" plain round @click="editGlobalFunctions">编写代码</el-button>
           </el-form-item>
           <el-form-item label-width="0">
-            <el-divider class="custom-divider">{{i18nt('designer.setting.formSFCSetting')}}</el-divider>
+            <el-divider class="custom-divider">生成SFC设置</el-divider>
           </el-form-item>
-          <el-form-item :label="i18nt('designer.setting.formModelName')">
+          <el-form-item :label="'数据对象名称'">
             <el-input type="text" v-model="formConfig.modelName"></el-input>
           </el-form-item>
-          <el-form-item :label="i18nt('designer.setting.formRefName')">
+          <el-form-item :label="'引用名称'">
             <el-input type="text" v-model="formConfig.refName"></el-input>
           </el-form-item>
-          <el-form-item :label="i18nt('designer.setting.formRulesName')">
+          <el-form-item :label="'验证规则名称'">
             <el-input type="text" v-model="formConfig.rulesName"></el-input>
           </el-form-item>
         </el-collapse-item>
 
-        <el-collapse-item v-if="showEventCollapse()" name="2" :title="i18nt('designer.setting.eventSetting')">
+        <el-collapse-item v-if="showEventCollapse()" name="2" :title="'事件属性'">
           <el-form-item label="onFormCreated" label-width="150px">
             <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormCreated')">
-              {{i18nt('designer.setting.addEventHandler')}}</el-button>
+              编写代码</el-button>
           </el-form-item>
           <el-form-item label="onFormMounted" label-width="150px">
             <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormMounted')">
-              {{i18nt('designer.setting.addEventHandler')}}</el-button>
+              编写代码</el-button>
           </el-form-item>
           <!-- -->
           <el-form-item label="onFormDataChange" label-width="150px">
             <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormDataChange')">
-              {{i18nt('designer.setting.addEventHandler')}}</el-button>
+              编写代码</el-button>
           </el-form-item>
           <!-- -->
           <!--
           <el-form-item label="onFormValidate">
             <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormValidate')">
-              {{i18nt('designer.setting.addEventHandler')}}</el-button>
+              编写代码</el-button>
           </el-form-item>
           -->
         </el-collapse-item>
@@ -81,7 +81,7 @@
     </el-form>
 
     <div v-if="showFormEventDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.setting.editFormEventHandler')" v-model="showFormEventDialogFlag"
+      <el-dialog :title="'表单事件处理'" v-model="showFormEventDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" append-to-body
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <el-alert type="info" :closable="false" :title="'form.' + eventParamsMap[curEventName]"></el-alert>
@@ -99,7 +99,7 @@
     </div>
 
     <div v-if="showEditFormCssDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.setting.formCss')" v-model="showEditFormCssDialogFlag"
+      <el-dialog :title="'表单全局CSS'" v-model="showEditFormCssDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" append-to-body
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <code-editor :mode="'css'" :readonly="false" v-model="formCssCode"></code-editor>
@@ -115,7 +115,7 @@
     </div>
 
     <div v-if="showEditFunctionsDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.setting.globalFunctions')" v-model="showEditFunctionsDialogFlag"
+      <el-dialog :title="'表单全局函数'" v-model="showEditFunctionsDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" append-to-body
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <code-editor :mode="'javascript'" :readonly="false" v-model="functionsCode" ref="gfEditor"></code-editor>

@@ -1,7 +1,7 @@
 <template>
   <el-form-item>
     <template #label>
-      <span>{{i18nt('designer.setting.fileTypes')}}
+      <span>上传文件类型
         <el-tooltip effect="light" :content="i18nt('designer.setting.fileTypesHelp')">
           <svg-icon icon-class="el-info" /></el-tooltip>
       </span>

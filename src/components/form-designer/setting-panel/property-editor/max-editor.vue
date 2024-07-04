@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.maxValue')">
+  <el-form-item :label="'最大值'">
     <el-input-number v-model="maxValue" class="hide-spin-button" style="width: 100%"></el-input-number>
   </el-form-item>
 </template>

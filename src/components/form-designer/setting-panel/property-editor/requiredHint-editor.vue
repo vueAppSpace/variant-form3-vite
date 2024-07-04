@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.requiredHint')">
+  <el-form-item :label="'必填校验提示'">
     <el-input type="text" v-model="optionModel.requiredHint"></el-input>
   </el-form-item>
 </template>

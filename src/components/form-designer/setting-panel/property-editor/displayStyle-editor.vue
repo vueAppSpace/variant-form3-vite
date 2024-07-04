@@ -1,8 +1,8 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.displayStyle')">
+  <el-form-item :label="'显示样式'">
     <el-radio-group v-model="optionModel.displayStyle">
-      <el-radio label="inline">{{i18nt('designer.setting.inlineLayout')}}</el-radio>
-      <el-radio label="block">{{i18nt('designer.setting.blockLayout')}}</el-radio>
+      <el-radio label="inline">行内</el-radio>
+      <el-radio label="block">块</el-radio>
     </el-radio-group>
   </el-form-item>
 </template>

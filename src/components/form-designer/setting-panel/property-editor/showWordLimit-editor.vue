@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.showWordLimit')">
+  <el-form-item :label="'显示字数统计'">
     <el-switch v-model="optionModel.showWordLimit"></el-switch>
   </el-form-item>
 </template>

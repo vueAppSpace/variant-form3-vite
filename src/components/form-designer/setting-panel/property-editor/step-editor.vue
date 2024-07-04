@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.step')">
+  <el-form-item :label="'增减步长'">
     <el-input-number v-model="optionModel.step" class="hide-spin-button" style="width: 100%"></el-input-number>
   </el-form-item>
 </template>

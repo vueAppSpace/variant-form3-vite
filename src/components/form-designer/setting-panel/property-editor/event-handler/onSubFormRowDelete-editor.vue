@@ -1,7 +1,7 @@
 <template>
   <el-form-item label="onSubFormRowDelete" label-width="150px">
     <el-button type="info" icon="el-icon-edit" plain round @click="editEventHandler('onSubFormRowDelete', eventParams)">
-      {{i18nt('designer.setting.addEventHandler')}}</el-button>
+      编写代码</el-button>
   </el-form-item>
 </template>
 

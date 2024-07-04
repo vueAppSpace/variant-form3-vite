@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.placeholder')">
+  <el-form-item :label="'占位内容'">
     <el-input type="text" v-model="optionModel.placeholder"></el-input>
   </el-form-item>
 </template>

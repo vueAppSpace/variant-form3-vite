@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.showRowNumber')">
+  <el-form-item :label="'显示行号'">
     <el-switch v-model="optionModel.showRowNumber"></el-switch>
   </el-form-item>
 </template>

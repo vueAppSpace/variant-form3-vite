@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.cellHeight')">
+  <el-form-item :label="'高度'">
     <el-input type="text" v-model="optionModel.cellHeight"></el-input>
   </el-form-item>
 </template>

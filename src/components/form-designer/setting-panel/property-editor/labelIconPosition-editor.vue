@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.labelIconPosition')">
+  <el-form-item :label="'标签Icon位置'">
     <el-select v-model="optionModel.labelIconPosition">
       <el-option v-for="item in labelIconPosition" :key="item.value" :label="item.label"
                  :value="item.value">

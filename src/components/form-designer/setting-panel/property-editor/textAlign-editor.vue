@@ -1,12 +1,12 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.textAlign')" v-if="(selectedWidget.type === 'static-text')">
+  <el-form-item :label="'文字对齐'" v-if="(selectedWidget.type === 'static-text')">
     <el-radio-group v-model="optionModel.textAlign" class="radio-group-custom">
       <el-radio-button label="left">
-        {{i18nt('designer.setting.leftAlign')}}</el-radio-button>
+        居左</el-radio-button>
       <el-radio-button label="center">
-        {{i18nt('designer.setting.centerAlign')}}</el-radio-button>
+        居中</el-radio-button>
       <el-radio-button label="right">
-        {{i18nt('designer.setting.rightAlign')}}</el-radio-button>
+        居右</el-radio-button>
     </el-radio-group>
   </el-form-item>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.labelTooltip')">
+  <el-form-item :label="'标签文字提示'">
     <el-input type="text" v-model="optionModel.labelTooltip"></el-input>
   </el-form-item>
 </template>

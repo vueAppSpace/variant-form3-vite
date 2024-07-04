@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.allowCreate')">
+  <el-form-item :label="'允许创建选项'">
     <el-switch v-model="optionModel.allowCreate"></el-switch>
   </el-form-item>
 </template>

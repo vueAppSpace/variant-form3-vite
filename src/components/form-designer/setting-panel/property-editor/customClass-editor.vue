@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.customClass')">
+  <el-form-item :label="'自定义CSS样式'">
     <el-select v-model="optionModel.customClass" multiple filterable allow-create
                default-first-option>
       <el-option v-for="(item, idx) in cssClassList" :key="idx" :label="item" :value="item"></el-option>

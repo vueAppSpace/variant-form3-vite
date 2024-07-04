@@ -41,18 +41,18 @@
       </el-cascader>
     </div>
     <div v-if="(selectedWidget.type === 'cascader')">
-      <el-button link type="primary" @click="importCascaderOptions">{{i18nt('designer.setting.importOptions')}}</el-button>
-      <el-button link type="primary" @click="resetDefault">{{i18nt('designer.setting.resetDefault')}}</el-button>
+      <el-button link type="primary" @click="importCascaderOptions">导入选项</el-button>
+      <el-button link type="primary" @click="resetDefault">重设选中项</el-button>
     </div>
 
     <div v-if="(selectedWidget.type === 'radio') || (selectedWidget.type === 'checkbox') || (selectedWidget.type === 'select')">
-      <el-button link type="primary" @click="addOption">{{i18nt('designer.setting.addOption')}}</el-button>
-      <el-button link type="primary" @click="importOptions">{{i18nt('designer.setting.importOptions')}}</el-button>
-      <el-button link type="primary" @click="resetDefault">{{i18nt('designer.setting.resetDefault')}}</el-button>
+      <el-button link type="primary" @click="addOption">增加选项</el-button>
+      <el-button link type="primary" @click="importOptions">导入选项</el-button>
+      <el-button link type="primary" @click="resetDefault">重设选中项</el-button>
     </div>
 
     <div v-if="showImportDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.setting.importOptions')" v-model="showImportDialogFlag"
+      <el-dialog :title="'导入选项'" v-model="showImportDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" append-to-body
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <el-form-item>
@@ -68,7 +68,7 @@
     </div>
 
     <div v-if="showImportCascaderDialogFlag" class="" v-drag="['.drag-dialog.el-dialog', '.drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.setting.importOptions')" v-model="showImportCascaderDialogFlag"
+      <el-dialog :title="'导入选项'" v-model="showImportCascaderDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" append-to-body
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
         <code-editor v-model="cascaderOptions" mode="json" :readonly="false"></code-editor>

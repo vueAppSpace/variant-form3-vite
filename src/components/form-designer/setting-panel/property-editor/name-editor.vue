@@ -1,8 +1,8 @@
 <template>
   <el-form-item prop="name" :rules="nameRequiredRule">
     <template #label>
-      <span>{{i18nt('designer.setting.uniqueName')}}
-        <el-tooltip effect="light" :content="i18nt('designer.setting.editNameHelp')">
+      <span>唯一名称
+        <el-tooltip effect="light" :content="'修改名称后需按回车确认'">
           <svg-icon icon-class="el-info" /></el-tooltip>
       </span>
     </template>
@@ -11,7 +11,7 @@
     </template>
     <template v-else>
       <el-select v-model="optionModel.name" allow-create filterable :disabled="widgetNameReadonly" @change="updateWidgetNameAndRef"
-                 :title="i18nt('designer.setting.editNameHelp')">
+                 :title="'修改名称后需按回车确认'">
         <el-option v-for="(sf, sfIdx) in serverFieldList" :key="sfIdx" :label="sf.label" :value="sf.name"></el-option>
       </el-select>
     </template>

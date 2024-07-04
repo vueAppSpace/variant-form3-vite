@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.rows')">
+  <el-form-item :label="'行数'">
     <el-input-number v-model="optionModel.rows" style="width: 100%"></el-input-number>
   </el-form-item>
 </template>

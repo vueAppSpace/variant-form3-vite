@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.showBlankRow')">
+  <el-form-item :label="'默认显示新行'">
     <el-switch v-model="optionModel.showBlankRow"></el-switch>
   </el-form-item>
 </template>

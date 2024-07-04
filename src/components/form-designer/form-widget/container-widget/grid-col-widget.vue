@@ -31,7 +31,7 @@
       <i :title="'复制组件'" @click.stop="cloneGridCol(widget)">
         <svg-icon icon-class="el-clone" />
       </i>
-      <i :title="移除组件" @click.stop="removeWidget">
+      <i :title="'移除组件'" @click.stop="removeWidget">
         <svg-icon icon-class="el-delete" />
       </i>
     </div>

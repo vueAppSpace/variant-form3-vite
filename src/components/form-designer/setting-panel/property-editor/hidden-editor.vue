@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.hidden')">
+  <el-form-item :label="'隐藏'">
     <el-switch v-model="optionModel.hidden"></el-switch>
   </el-form-item>
 </template>

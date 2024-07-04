@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.endPlaceholder')">
+  <el-form-item :label="'截止占位内容'">
     <el-input type="text" v-model="optionModel.endPlaceholder"></el-input>
   </el-form-item>
 </template>

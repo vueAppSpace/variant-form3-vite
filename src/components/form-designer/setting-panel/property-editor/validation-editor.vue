@@ -1,8 +1,8 @@
 <template>
   <el-form-item>
     <template #label>
-      <span>{{i18nt('designer.setting.validation')}}
-        <el-tooltip effect="light" :content="i18nt('designer.setting.validationHelp')">
+      <span>字段校验
+        <el-tooltip effect="light" :content="'支持输入正则表达式'">
           <svg-icon icon-class="el-info" /></el-tooltip>
       </span>
     </template>

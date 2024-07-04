@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.editable')">
+  <el-form-item :label="'可输入'">
     <el-switch v-model="optionModel.editable"></el-switch>
   </el-form-item>
 </template>

@@ -78,7 +78,7 @@
       <el-dialog :title="i18nt('designer.toolbar.importJson')" v-model="showImportJsonDialogFlag"
                  :show-close="true" class="drag-dialog small-padding-dialog" :append-to-body="true" center
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true">
-        <el-alert type="info" :title="i18nt('designer.hint.importJsonHint')" show-icon class="alert-padding"></el-alert>
+        <el-alert type="info" :title="'导入的JSON内容须符合下述格式，以保证顺利导入.'" show-icon class="alert-padding"></el-alert>
         <code-editor :mode="'json'" :readonly="false" v-model="importTemplate"></code-editor>
         <template #footer>
           <div class="dialog-footer">
@@ -136,7 +136,7 @@
     </div>
 
     <div v-if="showFormDataDialogFlag" class="" v-drag="['.nested-drag-dialog.el-dialog', '.nested-drag-dialog .el-dialog__header']">
-      <el-dialog :title="i18nt('designer.hint.exportFormData')" v-model="showFormDataDialogFlag"
+      <el-dialog :title="'表单数据'" v-model="showFormDataDialogFlag"
                  :show-close="true" class="nested-drag-dialog dialog-title-light-bg" center
                  :close-on-click-modal="false" :close-on-press-escape="false" :destroy-on-close="true"
                  :append-to-body="true">

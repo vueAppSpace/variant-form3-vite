@@ -29,20 +29,20 @@
         <i :title="'单元格操作'"><svg-icon icon-class="el-menu" /></i>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item command="insertLeftCol">{{i18nt('designer.setting.insertColumnToLeft')}}</el-dropdown-item>
-            <el-dropdown-item command="insertRightCol">{{i18nt('designer.setting.insertColumnToRight')}}</el-dropdown-item>
-            <el-dropdown-item command="insertAboveRow">{{i18nt('designer.setting.insertRowAbove')}}</el-dropdown-item>
-            <el-dropdown-item command="insertBelowRow">{{i18nt('designer.setting.insertRowBelow')}}</el-dropdown-item>
-            <el-dropdown-item command="mergeLeftCol" :disabled="mergeLeftColDisabled" divided>{{i18nt('designer.setting.mergeLeftColumn')}}</el-dropdown-item>
-            <el-dropdown-item command="mergeRightCol" :disabled="mergeRightColDisabled">{{i18nt('designer.setting.mergeRightColumn')}}</el-dropdown-item>
-            <el-dropdown-item command="mergeWholeRow" :disabled="mergeWholeRowDisabled">{{i18nt('designer.setting.mergeEntireRow')}}</el-dropdown-item>
-            <el-dropdown-item command="mergeAboveRow" :disabled="mergeAboveRowDisabled" divided>{{i18nt('designer.setting.mergeRowAbove')}}</el-dropdown-item>
-            <el-dropdown-item command="mergeBelowRow" :disabled="mergeBelowRowDisabled">{{i18nt('designer.setting.mergeRowBelow')}}</el-dropdown-item>
-            <el-dropdown-item command="mergeWholeCol" :disabled="mergeWholeColDisabled">{{i18nt('designer.setting.mergeEntireColumn')}}</el-dropdown-item>
-            <el-dropdown-item command="undoMergeRow" :disabled="undoMergeRowDisabled" divided>{{i18nt('designer.setting.undoMergeRow')}}</el-dropdown-item>
-            <el-dropdown-item command="undoMergeCol" :disabled="undoMergeColDisabled">{{i18nt('designer.setting.undoMergeCol')}}</el-dropdown-item>
-            <el-dropdown-item command="deleteWholeCol" :disabled="deleteWholeColDisabled" divided>{{i18nt('designer.setting.deleteEntireCol')}}</el-dropdown-item>
-            <el-dropdown-item command="deleteWholeRow" :disabled="deleteWholeRowDisabled">{{i18nt('designer.setting.deleteEntireRow')}}</el-dropdown-item>
+            <el-dropdown-item command="insertLeftCol">插入左侧列</el-dropdown-item>
+            <el-dropdown-item command="insertRightCol">插入右侧列</el-dropdown-item>
+            <el-dropdown-item command="insertAboveRow">插入上方行</el-dropdown-item>
+            <el-dropdown-item command="insertBelowRow">插入下方行</el-dropdown-item>
+            <el-dropdown-item command="mergeLeftCol" :disabled="mergeLeftColDisabled" divided>合并左侧单元格</el-dropdown-item>
+            <el-dropdown-item command="mergeRightCol" :disabled="mergeRightColDisabled">合并右侧单元格</el-dropdown-item>
+            <el-dropdown-item command="mergeWholeRow" :disabled="mergeWholeRowDisabled">合并整行</el-dropdown-item>
+            <el-dropdown-item command="mergeAboveRow" :disabled="mergeAboveRowDisabled" divided>合并上方单元格</el-dropdown-item>
+            <el-dropdown-item command="mergeBelowRow" :disabled="mergeBelowRowDisabled">合并下方单元格</el-dropdown-item>
+            <el-dropdown-item command="mergeWholeCol" :disabled="mergeWholeColDisabled">合并整列</el-dropdown-item>
+            <el-dropdown-item command="undoMergeRow" :disabled="undoMergeRowDisabled" divided>撤销行合并</el-dropdown-item>
+            <el-dropdown-item command="undoMergeCol" :disabled="undoMergeColDisabled">撤销列合并</el-dropdown-item>
+            <el-dropdown-item command="deleteWholeCol" :disabled="deleteWholeColDisabled" divided>删除整列</el-dropdown-item>
+            <el-dropdown-item command="deleteWholeRow" :disabled="deleteWholeRowDisabled">删除整行</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>

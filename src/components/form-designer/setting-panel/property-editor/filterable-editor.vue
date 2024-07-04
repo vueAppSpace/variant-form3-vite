@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.filterable')">
+  <el-form-item :label="'可搜索选项'">
     <el-switch v-model="optionModel.filterable"></el-switch>
   </el-form-item>
 </template>

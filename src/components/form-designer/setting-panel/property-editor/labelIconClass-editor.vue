@@ -1,9 +1,9 @@
 <template>
   <div>
     <el-form-item label-width="0">
-      <el-divider class="custom-divider">{{i18nt('designer.setting.customLabelIcon')}}</el-divider>
+      <el-divider class="custom-divider">定制字段标签</el-divider>
     </el-form-item>
-    <el-form-item :label="i18nt('designer.setting.labelIconClass')">
+    <el-form-item :label="'标签Icon样式'">
       <el-input type="text" v-model="optionModel.labelIconClass"></el-input>
     </el-form-item>
   </div>

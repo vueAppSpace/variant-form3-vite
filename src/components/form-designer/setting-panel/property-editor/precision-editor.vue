@@ -1,5 +1,5 @@
 <template>
-  <el-form-item :label="i18nt('designer.setting.precision')">
+  <el-form-item :label="'精度'">
     <el-input-number v-model="optionModel.precision" :min="0" class="hide-spin-button" style="width: 100%"></el-input-number>
   </el-form-item>
 </template>
