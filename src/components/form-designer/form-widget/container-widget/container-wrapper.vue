@@ -40,14 +40,14 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n";
+  
   import containerMixin from "@/components/form-designer/form-widget/container-widget/containerMixin";
   import SvgIcon from '@/components/svg-icon'
   import PageTextMap from "@/lang/zh-CN"
 
   export default {
     name: "container-wrapper",
-    mixins: [i18n, containerMixin],
+    mixins: [containerMixin],
     components: {
       SvgIcon
     },

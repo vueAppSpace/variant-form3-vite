@@ -8,13 +8,12 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n";
+  
   import {deepClone} from "@/utils/util";
 
   export default {
     name: "customClass-editor",
     componentName: 'PropertyEditor',
-    mixins: [i18n],
     props: {
       designer: Object,
       selectedWidget: Object,

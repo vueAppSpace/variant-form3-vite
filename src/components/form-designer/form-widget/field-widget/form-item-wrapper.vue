@@ -61,13 +61,12 @@
 </template>
 
 <script>
-  import i18n from "@/utils/i18n";
+  
   import SvgIcon from '@/components/svg-icon'
   import PageTextMap from "@/lang/zh-CN"
 
   export default {
     name: "form-item-wrapper",
-    mixins: [i18n],
     components: {
       SvgIcon
     },
