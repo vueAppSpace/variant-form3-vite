@@ -143,7 +143,8 @@ export function createDesigner(vueInstance) {
 
       return true
     },
-
+    
+    //用户确定当前移动操作是否可成功，返回true可成功，返回false终端移动操作
     checkFieldMove(evt) {
       if (!!evt.draggedContext && !!evt.draggedContext.element) {
         let wgCategory = evt.draggedContext.element.category

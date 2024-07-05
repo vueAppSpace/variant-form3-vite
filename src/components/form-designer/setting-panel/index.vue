@@ -108,7 +108,6 @@
     addWindowResizeHandler,
   } from "@/utils/util"
   
-  import eventBus from "@/utils/event-bus"
   import emitter from "@/utils/emitter";
   import { propertyRegistered } from "@/components/form-designer/setting-panel/propertyRegister";
 
@@ -244,7 +243,7 @@
         return this.designer.hasConfig(this.selectedWidget, originalPropName)
       },
 
-      getPropEditor(propName, editorName) {
+      getPropEditor(propName, editorName) {       
         let originalPropName = propName.replace(this.selectedWidget.type + '-', '')  //去掉组件名称前缀-，如果有的话！！
         let ownPropEditorName = `${this.selectedWidget.type}-${originalPropName}-editor`
         //console.log(ownPropEditorName, this.$options.components[ownPropEditorName])
