@@ -63,7 +63,8 @@ export default {
     deployment: '私有部署',
     subscription: '订阅Pro'
   },
-
+  
+  //容器组件，基础组件，高级组件的名称来源
   designer: {
     componentLib: '组件库',
     formLib: '表单模板',

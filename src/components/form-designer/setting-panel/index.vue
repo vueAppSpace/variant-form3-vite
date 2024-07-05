@@ -5,10 +5,12 @@
       <el-tab-pane :label="'组件设置'" name="1">
         <el-scrollbar class="setting-scrollbar" :style="{height: scrollerHeight}">
 
+          <!-- 设置其他组件属性 -->
           <template v-if="!!designer.selectedWidget && !designer.selectedWidget.category">
             <el-form :model="optionModel" size="small" label-position="left" label-width="120px" class="setting-form"
                      @submit.prevent>
               <el-collapse v-model="widgetActiveCollapseNames" class="setting-collapse">
+                <!-- 常见属性 -->
                 <el-collapse-item name="1" v-if="showCollapse(commonProps)" :title="'常见属性'">
                   <template v-for="(editorName, propName) in commonProps">
                     <component v-if="hasPropEditor(propName, editorName)" :is="getPropEditor(propName, editorName)"
@@ -16,6 +18,7 @@
                   </template>
                 </el-collapse-item>
 
+                <!-- 高级属性 -->
                 <el-collapse-item name="2" v-if="showCollapse(advProps)" :title="'高级属性'">
                   <template v-for="(editorName, propName) in advProps">
                     <component v-if="hasPropEditor(propName, editorName)" :is="getPropEditor(propName, editorName)"
@@ -23,6 +26,7 @@
                   </template>
                 </el-collapse-item>
 
+                <!-- 事件属性 -->
                 <el-collapse-item name="3" v-if="showEventCollapse() && showCollapse(eventProps)" :title="'事件属性'">
                   <template v-for="(editorName, propName) in eventProps">
                     <component v-if="hasPropEditor(propName, editorName)" :is="getPropEditor(propName, editorName)"
@@ -33,7 +37,8 @@
 
             </el-form>
           </template>
-
+          
+          <!-- 设置容器组件属性： category 存在就是容器组件 -->
           <template v-if="(!!designer.selectedWidget && !!designer.selectedWidget.category)">
             <el-form :model="optionModel" size="small" label-position="left" label-width="120px" class="setting-form"
                      @submit.prevent>
@@ -138,9 +143,9 @@
         widgetActiveCollapseNames: ['1', '3'], //['1', '2', '3'],
         formActiveCollapseNames: ['1', '2'],
 
-        commonProps: COMMON_PROPERTIES,
-        advProps: ADVANCED_PROPERTIES,
-        eventProps: EVENT_PROPERTIES,
+        commonProps: COMMON_PROPERTIES,//常见属性
+        advProps: ADVANCED_PROPERTIES,//高级属性
+        eventProps: EVENT_PROPERTIES,//事件属性
 
         showWidgetEventDialogFlag: false,
         eventHandlerCode: '',

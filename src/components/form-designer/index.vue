@@ -23,7 +23,7 @@
         <widget-panel :designer="designer" />
       </el-aside>
 
-      <!-- 编辑区 -->
+      <!-- 编辑区域 -->
       <el-container class="center-layout-container">
         <!-- 编辑区工具栏 -->
         <el-header class="toolbar-header">

@@ -317,6 +317,7 @@ export function getAllContainerWidgets(widgetList) {
   return result
 }
 
+//复制到剪贴板
 export function copyToClipboard(content, clickEvent, $message, successMsg, errorMsg) {
   const clipboard = new Clipboard(clickEvent.target, {
     text: () => content
@@ -335,6 +336,7 @@ export function copyToClipboard(content, clickEvent, $message, successMsg, error
   clipboard.onClick(clickEvent)
 }
 
+//获取查询参数
 export function getQueryParam(variable) {
   let query = window.location.search.substring(1);
   let vars = query.split("&")
@@ -348,7 +350,7 @@ export function getQueryParam(variable) {
   return undefined;
 }
 
-//获取默认表单配置
+//获取默认表单配置 formConfig 属性的内容
 export function getDefaultFormConfig() {
   return {
     modelName: 'formData',
@@ -361,7 +363,7 @@ export function getDefaultFormConfig() {
     cssCode: '',
     customClass: [],
     functions: '',  //全局函数
-    layoutType: 'PC',
+    layoutType: 'PC',//布局类型
     jsonVersion: 3,
 
     onFormCreated: '',

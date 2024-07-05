@@ -1,10 +1,13 @@
 import emitter from '@/utils/emitter'
 
+//通过一个函数动态产生组件定义选项
 export const createInputTextEditor = function (propName, propLabelKey) {
   return {
     props: {
       optionModel: Object,
     },
+    //用于编程式地创建组件虚拟DOM树的函数
+    //是对template的一种替代解决方案，使你可以用js更灵活的声明组件渲染输出
     render(h) {
       return (
         <el-form-item label={propLabelKey}>
@@ -40,6 +43,7 @@ export const createInputNumberEditor = function (propName, propLabelKey) {
   }
 }
 
+//动态创建一个组件定义
 export const createBooleanEditor = function (propName, propLabelKey) {
   return {
     props: {

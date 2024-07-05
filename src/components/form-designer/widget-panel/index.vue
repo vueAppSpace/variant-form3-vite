@@ -186,6 +186,7 @@
             displayName: PageTextMap.designer.widgetLabel[con.type]
           }
         }).filter(con => {
+          //不展示子容器组件
           return !con.internal && !this.isBanned(con.type)
         })
 

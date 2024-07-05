@@ -1,6 +1,7 @@
 
 const modules = import.meta.globEager('./*.vue')
 
+//用于全局注册 运行期 容器组件的插件
 export default {
   install(app) {
     for (const path in modules) {

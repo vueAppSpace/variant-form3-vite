@@ -15,18 +15,19 @@ export function createDesigner(vueInstance) {
   let defaultFormConfig = deepClone( getDefaultFormConfig() )
 
   return {
-    widgetList: [],//存储该表单包含的所有的子组件(容器组件，基础组件，高级组件)
-    formConfig: {cssCode: ''},
+    widgetList: [],//存储该表单包含的所有的子组件(容器组件，基础组件，高级组件，自定义组件)
+    formConfig: {cssCode: ''},//存储表单本身的配置信息
 
     selectedId: null,
-    selectedWidget: null,
+    selectedWidget: null,//当前选中的组件对象
     selectedWidgetName: null,  //选中组件名称（唯一）
     vueInstance: vueInstance,
 
     formWidget: null,  //表单设计容器
 
     cssClassList: [],  //自定义样式列表
-
+    
+    //记录历史操作步骤的
     historyData: {
       index: -1,  //index: 0,
       maxStep: 20,
@@ -580,6 +581,7 @@ export function createDesigner(vueInstance) {
       this.emitHistoryChange()
     },
 
+    //根据type字段获取容器组件
     getContainerByType(typeName) {
       let allWidgets = [...containers, ...basicFields, ...advancedFields, ...customFields]
       let foundCon = null
@@ -592,6 +594,7 @@ export function createDesigner(vueInstance) {
       return foundCon
     },
 
+    //根据type字段获取字段组件
     getFieldWidgetByType(typeName) {
       let allWidgets = [...containers, ...basicFields, ...advancedFields, ...customFields]
       let foundWidget = null

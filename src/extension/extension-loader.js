@@ -1,5 +1,3 @@
-//import { vfApp } from '@/utils/create-app'
-
 import {
   addContainerWidgetSchema,
   addCustomWidgetSchema
@@ -21,8 +19,7 @@ export const loadExtension = function (app) {
    * 1. 加载组件Json Schema;
    * 2. 全局注册容器组件，容器组件有两种状态——设计期和运行期，故需要注册两个组件；
    * 3. 全局注册属性编辑器组件（基本属性、高级属性、事件属性）；
-   * 4. 注册容器组件的代码生成器；
-   * 5. 加载完毕。
+   * 4. 加载完毕。
    */
   addContainerWidgetSchema(cardSchema)  //加载组件Json Schema
   /* -------------------------------------------------- */

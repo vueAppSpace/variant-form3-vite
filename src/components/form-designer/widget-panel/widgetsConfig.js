@@ -1,14 +1,23 @@
+/*
+ * @Author: YanivWang YanivWang@gmail.com
+ * @Date: 2024-07-01 09:12:12
+ * @LastEditTime: 2024-07-05 11:22:56
+ * @Description: 组件数据结构定义
+ */
 
+//所有的容器组件
 export const containers = [
+  //eg:
+  //一个对象就是一个组件的定义
   {
-    type: 'grid',
-    category: 'container',
-    icon: 'grid',
-    cols: [],
-    options: {
+    type: 'grid',//代表组件类型
+    category: 'container', //区分是容器组件还是其他
+    icon: 'grid',//组件图标
+    cols: [], //栅格列
+    options: {//options是该组件暴露出来的可配置的属性
       name: '',
       hidden: false,
-      gutter: 12,
+      gutter: 12,//每个栅格列宽
       colHeight: null,  //栅格列统一高度属性，用于解决栅格列设置响应式布局浮动后被挂住的问题！！
       customClass: '',  //自定义css类名
     }
@@ -30,7 +39,7 @@ export const containers = [
     type: 'tab',
     category: 'container',
     icon: 'tab',
-    displayType: 'border-card',
+    displayType: 'border-card',//todo
     tabs: [],
     options: {
       name: '',
@@ -38,12 +47,14 @@ export const containers = [
       customClass: '',  //自定义css类名
     }
   },
-
+  
+  //eg: 这个grid-col虽然是容器组件，但是它同时也是 type: 'grid'的子组件
+  //不属于顶级容器组件，所以在组件库列表中是不会显示的
   {
     type: 'grid-col',
     category: 'container',
     icon: 'grid-col',
-    internal: true,
+    internal: true,//是否是其它容器组件内部子组件
     widgetList: [],
     options: {
       name: '',
@@ -94,18 +105,41 @@ export const containers = [
     }
   },
 
-
 ]
 
+//所有的基础组件
 export const basicFields = [
+   
+  //eg:
+  {
+    type: 'static-text',
+    icon: 'static-text',
+    formItemFlag: false,//是否是属于表单子元素
+    options: {
+      //----------常见属性---------
+      name: '',//所有组件都是一个唯一的name属性
+      columnWidth: '200px',
+      hidden: false,
+      textContent: 'static text',
+      textAlign: 'left',
+      fontSize: '13px',
+      preWrap: false,  //是否自动换行
+      customClass: '',  //自定义css类名
+      //----------事件属性---------
+      onCreated: '',
+      onMounted: '',
+    },
+  },
+  //eg:
   {
     type: 'input',
     icon: 'text-field',
-    formItemFlag: true,
+    formItemFlag: true,//属于表单属性
     options: {
+      //---------基础属性----------
       name: '',
-      label: '',
-      labelAlign: '',
+      label: '',//标签
+      labelAlign: '',//标签对其
       type: 'text',
       defaultValue: '',
       placeholder: '',
@@ -122,11 +156,11 @@ export const basicFields = [
       requiredHint: '',
       validation: '',
       validationHint: '',
-      //-------------------
       customClass: '',  //自定义css类名
       labelIconClass: null,
       labelIconPosition: 'rear',
       labelTooltip: null,
+      //---------- 高级属性 ---------
       minLength: null,
       maxLength: null,
       showWordLimit: false,
@@ -135,7 +169,7 @@ export const basicFields = [
       appendButton: false,
       appendButtonDisabled: false,
       buttonIcon: 'custom-search',
-      //-------------------
+      //--------- 事件属性 ----------
       onCreated: '',
       onMounted: '',
       onInput: '',
@@ -187,6 +221,24 @@ export const basicFields = [
       onValidate: '',
     },
   },
+
+  {
+    type: 'html-text',
+    icon: 'html-text',
+    formItemFlag: false,
+    options: {
+      name: '',
+      columnWidth: '200px',
+      hidden: false,
+      htmlContent: '<b>html text</b>',
+      //-------------------
+      customClass: '',  //自定义css类名
+      //-------------------
+      onCreated: '',
+      onMounted: '',
+    },
+  },
+
 
   {
     type: 'number',
@@ -626,7 +678,7 @@ export const basicFields = [
   {
     type: 'slider',
     icon: 'slider-field',
-    formItemFlag: true,
+    formItemFlag: true,//是否是属于表单子元素
     options: {
       name: '',
       label: '',
@@ -658,43 +710,6 @@ export const basicFields = [
       onMounted: '',
       onChange: '',
       onValidate: '',
-    },
-  },
-
-  {
-    type: 'static-text',
-    icon: 'static-text',
-    formItemFlag: false,
-    options: {
-      name: '',
-      columnWidth: '200px',
-      hidden: false,
-      textContent: 'static text',
-      textAlign: 'left',
-      fontSize: '13px',
-      preWrap: false,  //是否自动换行
-      //-------------------
-      customClass: '',  //自定义css类名
-      //-------------------
-      onCreated: '',
-      onMounted: '',
-    },
-  },
-
-  {
-    type: 'html-text',
-    icon: 'html-text',
-    formItemFlag: false,
-    options: {
-      name: '',
-      columnWidth: '200px',
-      hidden: false,
-      htmlContent: '<b>html text</b>',
-      //-------------------
-      customClass: '',  //自定义css类名
-      //-------------------
-      onCreated: '',
-      onMounted: '',
     },
   },
 
@@ -742,11 +757,9 @@ export const basicFields = [
       onMounted: '',
     },
   },
-
-  //
-
 ]
 
+//所有的高级组件
 export const advancedFields = [
   {
     type: 'picture-upload',
@@ -918,6 +931,7 @@ export const advancedFields = [
 
 ]
 
+//所有的自定义组件
 export const customFields = [
 
 ]

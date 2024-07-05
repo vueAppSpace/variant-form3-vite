@@ -1,8 +1,8 @@
-//import { vfApp } from '@/utils/create-app'
-
 /**
  * 格式说明：属性名称==对应属性编辑器的组件名称
  */
+
+//一个组件的每个属性都会有一个对应的属性编辑器组件 name <==> name-editor
 const COMMON_PROPERTIES = {
   //字段
   'name'              :            'name-editor',

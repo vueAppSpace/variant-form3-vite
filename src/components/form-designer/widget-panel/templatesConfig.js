@@ -1,4 +1,4 @@
-//表单模板
+//表单模板(每一个jsonUrl对应一个json文件，这个json文本就是一个表单模板)
 export const formTemplates = [
   {
     title: '单列表单',
