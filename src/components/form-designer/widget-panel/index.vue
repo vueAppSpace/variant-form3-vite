@@ -227,9 +227,13 @@
       handleContainerWidgetClone(origin) {
         return this.designer.copyNewContainerWidget(origin)
       },
-
+      
+      //自定义克隆函数
       handleFieldWidgetClone(origin) {
-        return this.designer.copyNewFieldWidget(origin)
+        console.log("handleFieldWidgetClone,", origin);
+        const ret = this.designer.copyNewFieldWidget(origin)
+        console.log("handleFieldWidgetClone ret,", ret);
+        return ret;
       },
 
       checkContainerMove(evt) {

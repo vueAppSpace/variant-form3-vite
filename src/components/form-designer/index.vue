@@ -93,8 +93,7 @@
         type: Object,
         default: () => {
           return {
-            languageMenu: true,  //是否显示语言切换菜单
-            externalLink: true,  //是否显示GitHub、文档等外部链接
+          
             formTemplates: true,  //是否显示表单模板
             eventCollapse: true,  //是否显示组件事件属性折叠面板
             widgetNameReadonly: false,  //禁止修改组件名称
@@ -103,8 +102,6 @@
             previewFormButton: true,  //是否显示预览表单按钮
             importJsonButton: true,  //是否显示导入JSON按钮
             exportJsonButton: true,  //是否显示导出JSON器按钮
-            exportCodeButton: true,  //是否显示导出代码按钮
-            generateSFCButton: true,  //是否显示生成SFC按钮
 
             toolbarMaxWidth: 450,  //设计器工具按钮栏最大宽度（单位像素）
             toolbarMinWidth: 300,  //设计器工具按钮栏最小宽度（单位像素）
