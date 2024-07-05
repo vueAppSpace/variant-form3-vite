@@ -96,7 +96,6 @@
           <div class="dialog-footer">
             <el-button type="primary" class="copy-json-btn" :data-clipboard-text="jsonRawContent" @click="copyFormJson">
               复制JSON</el-button>
-            <el-button @click="saveFormJson">保存为文件</el-button>
             <el-button @click="showExportJsonDialogFlag = false">
               关闭</el-button>
           </div>
@@ -116,7 +115,6 @@
           <div class="dialog-footer">
             <el-button type="primary" class="copy-form-data-json-btn" :data-clipboard-text="formDataRawJson" @click="copyFormDataJson">
               复制JSON</el-button>
-            <el-button @click="saveFormData">保存为文件</el-button>
             <el-button @click="showFormDataDialogFlag = false">
               关闭</el-button>
           </div>
@@ -134,11 +132,9 @@
     deepClone,
     copyToClipboard,
     generateId,
-    getQueryParam,
     traverseAllWidgets, addWindowResizeHandler
   } from "@/utils/util"
 
-  import { saveAs } from 'file-saver'
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index";
 
@@ -383,38 +379,6 @@
         this.showPreviewDialogFlag = true
       },
 
-      saveAsFile(fileContent, defaultFileName) {
-        this.$prompt('文件名：', '保存为文件', {
-          inputValue: defaultFileName,
-          closeOnClickModal: false,
-          inputPlaceholder: '请输入文件名'
-        }).then(({ value }) => {
-          if (!value) {
-            value = defaultFileName
-          }
-
-          if (getQueryParam('vscode') == 1) {
-            this.vsSaveFile(value, fileContent)
-            return
-          }
-
-          const fileBlob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' })
-          saveAs(fileBlob ,value)
-        }).catch(() => {
-          //
-        })
-      },
-
-      vsSaveFile(fileName, fileContent) {
-        const msgObj = {
-          cmd: 'writeFile',
-          data: {
-            fileName,
-            code: fileContent
-          }
-        }
-        window.parent.postMessage(msgObj, '*')
-      },
 
       importJson() {
         this.importTemplate = JSON.stringify(this.designer.getImportTemplate(), null, '  ')
@@ -463,11 +427,6 @@
         )
       },
 
-      saveFormJson() {
-        this.saveAsFile(this.jsonContent, `vform${generateId()}.json`)
-      },
-
-
       getFormData() {
         this.$refs['preForm'].getFormData().then(formData => {
           this.formDataJson = JSON.stringify(formData, null, '  ')
@@ -485,10 +444,6 @@
             '复制JSON成功',
             '复制JSON失败'
         )
-      },
-
-      saveFormData() {
-        this.saveAsFile(this.htmlCode, `formData${generateId()}.json`)
       },
 
       resetForm() {
