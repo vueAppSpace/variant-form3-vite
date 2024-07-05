@@ -1,6 +1,5 @@
 import {deepClone} from "@/utils/util"
 import FormValidators from '@/utils/validators'
-import eventBus from "@/utils/event-bus"
 
 export default {
   inject: ['refList', 'getFormConfig', 'getGlobalDsv', 'globalOptionData', 'globalModel', 'getOptionData'],
