@@ -3,6 +3,7 @@
   "version": "3.0.10",
   "private": false,
   "scripts": {
+    "dev": "vite",
     "serve": "vite",
     "build": "vite build",
     "lib": "vite build --config vite-lib.config.js",
