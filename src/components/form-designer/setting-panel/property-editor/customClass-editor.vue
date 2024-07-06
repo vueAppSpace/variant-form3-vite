@@ -9,7 +9,7 @@
 
 <script>
   
-  import {deepClone} from "@/utils/util";
+  import {deepClone} from "@/utils/page-widgets-util";
 
   export default {
     name: "customClass-editor",

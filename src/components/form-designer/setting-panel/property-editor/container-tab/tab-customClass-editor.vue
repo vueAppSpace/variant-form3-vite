@@ -37,7 +37,7 @@
 <script>
   
   //import Draggable from 'vuedraggable'
-  import {deepClone} from "@/utils/util";
+  import {deepClone} from "@/utils/page-widgets-util";
 
   export default {
     name: "tab-customClass-editor",

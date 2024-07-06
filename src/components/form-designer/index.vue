@@ -59,7 +59,7 @@
   import VFormWidget from './form-widget/index.vue'
   import {createDesigner} from "@/components/form-designer/designer"
   import {addWindowResizeHandler, deepClone, getQueryParam, getAllContainerWidgets,
-    getAllFieldWidgets, traverseAllWidgets} from "@/utils/util"
+    getAllFieldWidgets, traverseAllWidgets} from "@/utils/page-widgets-util"
   
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index"

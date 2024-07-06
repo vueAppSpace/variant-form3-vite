@@ -129,7 +129,7 @@
     copyToClipboard,
     generateId,
     traverseAllWidgets, addWindowResizeHandler
-  } from "@/utils/util"
+  } from "@/utils/page-widgets-util"
 
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index";

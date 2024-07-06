@@ -1,4 +1,4 @@
-import { traverseFieldWidgetsOfContainer } from "@/utils/util";
+import { traverseFieldWidgetsOfContainer } from "@/utils/page-widgets-util";
 
 export default {
   inject: ['getFormConfig', 'getGlobalDsv'],

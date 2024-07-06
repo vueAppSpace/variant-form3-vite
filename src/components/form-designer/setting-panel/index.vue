@@ -106,7 +106,7 @@
   import WidgetProperties from './propertyRegister'
   import {
     addWindowResizeHandler,
-  } from "@/utils/util"
+  } from "@/utils/page-widgets-util"
   
   import emitter from "@/utils/emitter";
   import { propertyRegistered } from "@/components/form-designer/setting-panel/propertyRegister";

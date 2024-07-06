@@ -37,7 +37,7 @@
   import FormItemWrapper from './form-item-wrapper'
   import emitter from '@/utils/emitter'
   
-  import {deepClone, evalFn} from "@/utils/util";
+  import {deepClone, evalFn} from "@/utils/page-widgets-util";
   import fieldMixin from "@/components/form-designer/form-widget/field-widget/fieldMixin";
   import SvgIcon from "@/components/svg-icon/index";
 

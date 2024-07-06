@@ -20,7 +20,7 @@
 
 <script>
   
-  import {isEmptyStr} from "@/utils/util"
+  import {isEmptyStr} from "@/utils/page-widgets-util"
   import SvgIcon from "@/components/svg-icon/index";
 
   export default {

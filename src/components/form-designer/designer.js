@@ -6,7 +6,7 @@
  * remark: 如果要分发VForm源码，需在本文件顶部保留此文件头信息！！
  */
 
-import {deepClone, generateId, getDefaultFormConfig, overwriteObj} from "@/utils/util"
+import {deepClone, generateId, getDefaultFormConfig, overwriteObj} from "@/utils/page-widgets-util"
 import {containers, advancedFields, basicFields, customFields} from "@/components/form-designer/widget-panel/widgetsConfig.js"
 import eventBus from "@/utils/event-bus"
 

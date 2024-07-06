@@ -45,7 +45,7 @@
   import {
     generateId, deepClone, insertCustomCssToHead, insertGlobalFunctionsToHtml, getAllContainerWidgets,
     getAllFieldWidgets, traverseFieldWidgets, buildDefaultFormJson
-  } from "@/utils/util"
+  } from "@/utils/page-widgets-util"
   
 
   export default {

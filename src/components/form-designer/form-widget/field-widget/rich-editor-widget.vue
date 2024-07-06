@@ -28,7 +28,7 @@
   import FormItemWrapper from './form-item-wrapper'
   import emitter from '@/utils/emitter'
   
-  import {deepClone} from "@/utils/util";
+  import {deepClone} from "@/utils/page-widgets-util";
   import fieldMixin from "@/components/form-designer/form-widget/field-widget/fieldMixin";
 
   import { Quill, quillEditor } from 'vue3-quill'

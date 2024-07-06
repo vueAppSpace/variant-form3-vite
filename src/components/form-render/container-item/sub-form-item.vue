@@ -65,7 +65,7 @@
 <script>
   import emitter from '@/utils/emitter'
   
-  import {deepClone, generateId} from '@/utils/util'
+  import {deepClone, generateId} from '@/utils/page-widgets-util'
   import refMixin from '../../../components/form-render/refMixin'
   import ContainerItemWrapper from './container-item-wrapper'
   import containerItemMixin from './containerItemMixin'

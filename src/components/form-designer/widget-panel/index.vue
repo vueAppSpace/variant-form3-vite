@@ -93,7 +93,7 @@
 <script>
   import {containers as CONS, basicFields as BFS, advancedFields as AFS, customFields as CFS} from "./widgetsConfig"
   import {formTemplates} from './templatesConfig'
-  import {addWindowResizeHandler, generateId} from "@/utils/util"
+  import {addWindowResizeHandler, generateId} from "@/utils/page-widgets-util"
   
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index";

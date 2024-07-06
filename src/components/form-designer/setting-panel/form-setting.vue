@@ -136,7 +136,7 @@
 <script>
   
   import CodeEditor from '@/components/code-editor/index'
-  import {deepClone, insertCustomCssToHead, insertGlobalFunctionsToHtml} from "@/utils/util"
+  import {deepClone, insertCustomCssToHead, insertGlobalFunctionsToHtml} from "@/utils/page-widgets-util"
 
   export default {
     name: "form-setting",
