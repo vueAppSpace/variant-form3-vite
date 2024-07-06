@@ -20,7 +20,7 @@
             <el-checkbox label="激活" v-model="tpItem.options.active" disabled @change="(evt) => onTabPaneActiveChange(evt, tpItem)"
                          style="margin-right: 8px"/>
             <el-input link type="primary" v-model="tpItem.options.label" style="width: 155px"></el-input>
-            <i class="iconfont icon-drag drag-option"></i>
+            <el-icon class="drag-option"><Rank /></el-icon>
             <el-button circle plain size="small" type="danger" @click="deleteTabPane(selectedWidget, tpIdx)"
                        icon="Minus" class="col-delete-button"></el-button>
           </li>

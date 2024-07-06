@@ -1,8 +1,8 @@
-import { Edit, Minus, Plus, Search } from '@element-plus/icons-vue'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 export function registerIcon (app) {
-  app.component('Edit', Edit)
-  app.component('Minus', Minus)
-  app.component('Plus', Plus)
-  app.component('Search', Search)
+   // 引用全部element icon
+   for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+  }
 }
