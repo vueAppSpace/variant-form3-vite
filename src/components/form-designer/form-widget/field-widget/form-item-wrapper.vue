@@ -229,7 +229,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../../../styles/global.scss";
+  @import "../../../../styles/page-widgets.scss";
 
   .design-time-bottom-margin {
     margin-bottom: 5px;
