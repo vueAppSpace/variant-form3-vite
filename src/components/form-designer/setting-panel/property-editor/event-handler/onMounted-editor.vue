@@ -1,6 +1,6 @@
 <template>
   <el-form-item label="onMounted" label-width="150px">
-    <el-button type="info" icon="el-icon-edit" plain round @click="editEventHandler('onMounted', eventParams)">
+    <el-button type="info" icon="Edit" plain round @click="editEventHandler('onMounted', eventParams)">
       编写代码</el-button>
   </el-form-item>
 </template>

@@ -14,7 +14,7 @@
                          @change="(newValue, oldValue) => spanChanged(selectedWidget, colItem, colIdx, newValue, oldValue)"
                          class="cell-span-input"></el-input-number>
         <el-button circle plain size="small" type="danger" @click="deleteCol(selectedWidget, colIdx)"
-                   icon="el-icon-minus" class="col-delete-button"></el-button>
+                   icon="Minus" class="col-delete-button"></el-button>
       </li>
       <div>
         <el-button link type="primary" @click="addNewCol(selectedWidget)">增加栅格</el-button>

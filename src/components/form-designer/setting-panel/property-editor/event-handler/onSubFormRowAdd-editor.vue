@@ -1,6 +1,6 @@
 <template>
   <el-form-item label="onSubFormRowAdd" label-width="150px">
-    <el-button type="info" icon="el-icon-edit" plain round @click="editEventHandler('onSubFormRowAdd', eventParams)">
+    <el-button type="info" icon="Edit" plain round @click="editEventHandler('onSubFormRowAdd', eventParams)">
       编写代码</el-button>
   </el-form-item>
 </template>

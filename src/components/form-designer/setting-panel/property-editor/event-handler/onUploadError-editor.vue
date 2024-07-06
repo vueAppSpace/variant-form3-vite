@@ -1,6 +1,6 @@
 <template>
   <el-form-item label="onUploadError" label-width="150px">
-    <el-button type="info" icon="el-icon-edit" plain round @click="editEventHandler('onUploadError', eventParams)">
+    <el-button type="info" icon="Edit" plain round @click="editEventHandler('onUploadError', eventParams)">
       编写代码</el-button>
   </el-form-item>
 </template>

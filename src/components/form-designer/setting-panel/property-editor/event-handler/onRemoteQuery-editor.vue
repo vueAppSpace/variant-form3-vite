@@ -1,6 +1,6 @@
 <template>
   <el-form-item label="onRemoteQuery" label-width="150px">
-    <el-button type="info" icon="el-icon-edit" plain round @click="editEventHandler('onRemoteQuery', eventParams)">
+    <el-button type="info" icon="Edit" plain round @click="editEventHandler('onRemoteQuery', eventParams)">
       编写代码</el-button>
   </el-form-item>
 </template>

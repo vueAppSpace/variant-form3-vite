@@ -28,7 +28,7 @@
             <el-input-number v-model="formConfig.labelWidth" :min="0" style="width: 100%"></el-input-number>
           </el-form-item>
           <el-form-item :label="'表单全局CSS'">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editFormCss">编写CSS</el-button>
+            <el-button type="info" icon="Edit" plain round @click="editFormCss">编写CSS</el-button>
           </el-form-item>
           <!-- -->
           <el-form-item :label="'自定义CSS样式'">
@@ -39,7 +39,7 @@
           </el-form-item>
           <!-- -->
           <el-form-item :label="'表单全局函数'">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editGlobalFunctions">编写代码</el-button>
+            <el-button type="info" icon="Edit" plain round @click="editGlobalFunctions">编写代码</el-button>
           </el-form-item>
           <el-form-item label-width="0">
             <el-divider class="custom-divider">生成SFC设置</el-divider>
@@ -57,22 +57,22 @@
 
         <el-collapse-item v-if="showEventCollapse()" name="2" :title="'事件属性'">
           <el-form-item label="onFormCreated" label-width="150px">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormCreated')">
+            <el-button type="info" icon="Edit" plain round @click="editFormEventHandler('onFormCreated')">
               编写代码</el-button>
           </el-form-item>
           <el-form-item label="onFormMounted" label-width="150px">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormMounted')">
+            <el-button type="info" icon="Edit" plain round @click="editFormEventHandler('onFormMounted')">
               编写代码</el-button>
           </el-form-item>
           <!-- -->
           <el-form-item label="onFormDataChange" label-width="150px">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormDataChange')">
+            <el-button type="info" icon="Edit" plain round @click="editFormEventHandler('onFormDataChange')">
               编写代码</el-button>
           </el-form-item>
           <!-- -->
           <!--
           <el-form-item label="onFormValidate">
-            <el-button type="info" icon="el-icon-edit" plain round @click="editFormEventHandler('onFormValidate')">
+            <el-button type="info" icon="Edit" plain round @click="editFormEventHandler('onFormValidate')">
               编写代码</el-button>
           </el-form-item>
           -->
