@@ -1,8 +1,4 @@
-//import { vfApp } from '@/utils/create-app'
-
 export function addDirective(app) {
-
-
   /**
    * 拖拽指令使用方式：v-drag="[dragDom, dragHeader]"，如 `<div v-drag="['.drag-container .el-dialog', '.drag-container .el-dialog__header']"></div>`
    */

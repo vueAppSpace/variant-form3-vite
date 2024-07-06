@@ -18,7 +18,8 @@
   import 'ace-builds/src-min-noconflict/mode-json' //
   import 'ace-builds/src-min-noconflict/mode-css' //
   import 'ace-builds/src-min-noconflict/ext-language_tools'
-  import {ACE_BASE_PATH} from "@/utils/config";
+
+  const ACE_BASE_PATH = 'https://ks3-cn-beijing.ksyun.com/vform2021/ace-mini'
 
   export default {
     name: 'CodeEditor',

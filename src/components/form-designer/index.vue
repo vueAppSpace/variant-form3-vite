@@ -60,10 +60,11 @@
   import {createDesigner} from "@/components/form-designer/designer"
   import {addWindowResizeHandler, deepClone, getQueryParam, getAllContainerWidgets,
     getAllFieldWidgets, traverseAllWidgets} from "@/utils/util"
-  import {MOCK_CASE_URL} from "@/utils/config"
   
   import axios from 'axios'
   import SvgIcon from "@/components/svg-icon/index"
+
+  const MOCK_CASE_URL = 'https://ks3-cn-beijing.ksyuncs.com/vform-static/vcase/'
 
   export default {
     name: "VFormDesigner",
